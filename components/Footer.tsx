@@ -22,7 +22,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="font-bold text-slate-900 mb-4">Newsletter</h4>
-            <p className="text-slate-600 text-sm">Subscribe for insights on web dev, testing & AI.</p>
+            <p className="text-slate-600 text-lg subscribe font-bold">Subscribe for insights AI</p>
           </div>
         </div>
         <div className="border-t border-slate-200 pt-8 text-center text-slate-600 text-sm">
