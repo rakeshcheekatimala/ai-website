@@ -7,15 +7,15 @@ export default function About() {
       
       <div className="space-y-8 text-lg text-slate-700 leading-relaxed">
         <p>
-          I'm a passionate educator and developer focused on helping others write better tests, build more robust applications, and improve their development workflow. My goal is to make testing and quality assurance accessible to everyone.
+          I’m a senior engineer with experience across frontend, platform, and backend systems. I focus on building reliable, user-centric solutions and simplifying complex problems so teams can move with clarity and confidence.
         </p>
         
         <p>
-          Through blog posts, talks, and open-source projects, I share practical knowledge about testing strategies, web development best practices, and building tools that make developers' lives easier.
+          Curiosity drives my work. I'm always learning, exploring new ideas, and turning technical challenges into solutions that are stable, scalable, and easy for others to build on.
         </p>
         
         <p>
-          When I'm not writing code or content, you'll find me speaking at conferences, mentoring other developers, or exploring new technologies that could improve how we build for the web.
+         What matters most to me is creating a positive impact on my team, the products I help shape, and the people I work with. My goal is straightforward: continue improving, share what I learn, and build things that make work simpler and better for everyone.
         </p>
 
         <div className="pt-8 border-t border-slate-200">
@@ -26,10 +26,10 @@ export default function About() {
             Interested in collaborating or just want to chat? Feel free to reach out on social media or drop me an email.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="px-6 py-3 bg-slate-900 text-white font-semibold rounded-lg hover:bg-slate-800 transition">
-              Twitter
+            <a href="https://www.linkedin.com/in/rakesh-cheekatimala/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-slate-900 text-white font-semibold rounded-lg hover:bg-slate-800 transition">
+              LinkedIn
             </a>
-            <a href="#" className="px-6 py-3 bg-slate-100 text-slate-900 font-semibold rounded-lg hover:bg-slate-200 transition">
+            <a href="https://github.com/rakeshcheekatimala" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-slate-100 text-slate-900 font-semibold rounded-lg hover:bg-slate-200 transition">
               GitHub
             </a>
           </div>

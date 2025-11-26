@@ -1,11 +1,14 @@
 import './globals.css'
 import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from '@components/Header'
+import Footer from '@components/Footer'
 
 export const metadata = {
-  title: 'Home — Web Developer & Educator',
-  description: 'In-depth guides on testing, web development, and building better tools for developers.',
+  title: 'Rakesh Cheekatimala — AI & Full-Stack Developer',
+  description: 'Portfolio and insights on AI, fullstack engineering.',
+  icons: {
+    icon: '/images/mascot.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
