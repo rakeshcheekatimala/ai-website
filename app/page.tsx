@@ -13,14 +13,18 @@ export default async function Home() {
       <section className="py-20 md:py-28 lg:py-36 max-w-4xl mx-auto px-6">
         <div className="space-y-6 mb-12">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-slate-50">
-            Making testing easier so you can be<span className="text-indigo-400"> confident</span> in your code.
+            Hello, I'm Rakesh!
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-2xl">
-            Learn testing best practices, modern web development, and building great developer experiences through hands-on tutorials and in-depth articles.
+          Currently based in Singapore with 10+ years of experience building scalable frontend systems and developer tooling.
+          I've shipped products across payments, property, e-commerce, and enterprise platforms. 
+          I care deeply about the craft behind them by implementing the principles of clean architecture, reliable tests, and systems that hold up.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-6">
             <Link 
-              href="/blog" 
+              href="https://rakeshcheekatimala.substack.com" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-500 transition"
             >
               Read Articles →

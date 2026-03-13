@@ -56,7 +56,7 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8 items-center text-lg">
-          <Link href="/blog" className="text-slate-400 hover:text-indigo-400 transition" onClick={handleNavClick}>
+          <Link href="https://rakeshcheekatimala.substack.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-400 transition" onClick={handleNavClick}>
             Blog
           </Link>
           <Link href="/projects" className="text-slate-400 hover:text-indigo-400 transition" onClick={handleNavClick}>
