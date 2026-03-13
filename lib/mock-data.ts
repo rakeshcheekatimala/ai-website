@@ -1,3 +1,5 @@
+import { getAllPosts } from './mdx'
+
 export type Post = {
   title: string
   slug: string
@@ -12,30 +14,6 @@ export type Project = {
   summary: string
   url?: string
 }
-
-export const mockPosts: Post[] = [
-  {
-    title: 'Designing delightful developer experiences',
-    slug: 'designing-developer-experiences',
-    excerpt: 'Thoughts on how to craft interfaces and docs that respect developers time and focus.',
-    content: 'Full content for designing delightful developer experiences...',
-    date: '2025-01-01'
-  },
-  {
-    title: 'AI for front-end: practical experiments',
-    slug: 'ai-for-frontend',
-    excerpt: 'A hands-on look at simple AI integrations that improve UX and DX.',
-    content: 'Full content for AI experiments...',
-    date: '2025-06-10'
-  },
-  {
-    title: 'Testing patterns that scale',
-    slug: 'testing-patterns',
-    excerpt: 'A collection of testing strategies and patterns for modern apps.',
-    content: 'Full content for testing patterns...',
-    date: '2024-12-20'
-  }
-]
 
 export const mockProjects: Project[] = [
   {
@@ -52,5 +30,12 @@ export const mockProjects: Project[] = [
   }
 ]
 
-export async function getMockPosts() { return mockPosts }
+export async function getMockPosts(): Promise<Post[]> {
+  const posts = await getAllPosts()
+  return posts.map(post => ({
+    ...post,
+    content: '', // Content is loaded separately in post pages
+  }))
+}
+
 export async function getMockProjects() { return mockProjects }

@@ -41,34 +41,34 @@ export default function Header() {
   if (!mounted) return null
 
   return (
-    <header className="sticky top-0 z-40 bg-dark-surface/80 backdrop-blur-md border-dark-border">
+    <header className="sticky top-0 z-40 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
       <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
           <Image
             src="/images/mascot.png"
-            alt="Phoenix Mascot"
+            alt="Mascot"
             width={50}
             height={50}
             className="rounded-lg"
           />
-          <span className="text-2xl font-bold text-cream-base">Rakesh</span>
+          <span className="text-2xl font-bold text-slate-50">Rakesh</span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8 items-center text-lg">
-          <Link href="/blog" className="text-cream-dark hover:text-phoenix-warm transition" onClick={handleNavClick}>
+          <Link href="https://rakeshcheekatimala.substack.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-400 transition" onClick={handleNavClick}>
             Blog
           </Link>
-          <Link href="/projects" className="text-cream-dark hover:text-phoenix-warm transition" onClick={handleNavClick}>
+          <Link href="/projects" className="text-slate-400 hover:text-indigo-400 transition" onClick={handleNavClick}>
             Projects
           </Link>
-          <Link href="/about" className="text-cream-dark hover:text-phoenix-warm transition" onClick={handleNavClick}>
+          <Link href="/about" className="text-slate-400 hover:text-indigo-400 transition" onClick={handleNavClick}>
             About
           </Link>
 
           <button
             onClick={toggleSound}
-            className="text-cream-dark hover:text-phoenix-warm transition p-2 rounded-lg hover:bg-dark-surface/50 duration-200"
+            className="text-slate-400 hover:text-indigo-400 transition p-2 rounded-lg hover:bg-slate-800 duration-200"
             aria-label={soundEnabled ? "Mute sound" : "Unmute sound"}
             title={soundEnabled ? "Click to mute" : "Click to unmute"}
           >
@@ -89,7 +89,7 @@ export default function Header() {
         <div className="flex md:hidden gap-3 items-center">
           <button
             onClick={toggleSound}
-            className="text-cream-dark hover:text-phoenix-warm transition p-2 rounded-lg hover:bg-dark-surface/50 duration-200"
+            className="text-slate-400 hover:text-indigo-400 transition p-2 rounded-lg hover:bg-slate-800 duration-200"
             aria-label={soundEnabled ? "Mute sound" : "Unmute sound"}
             title={soundEnabled ? "Click to mute" : "Click to unmute"}
           >
@@ -107,7 +107,7 @@ export default function Header() {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-cream-dark hover:text-phoenix-warm transition p-2 rounded-lg hover:bg-dark-surface/50 duration-200"
+            className="text-slate-400 hover:text-indigo-400 transition p-2 rounded-lg hover:bg-slate-800 duration-200"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -126,15 +126,15 @@ export default function Header() {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <nav className="md:hidden border-t border-dark-border bg-dark-surface/50 backdrop-blur-sm">
+        <nav className="md:hidden border-t border-slate-800 bg-slate-900/90 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
-            <Link href="/blog" className="text-cream-dark hover:text-phoenix-warm transition py-2" onClick={handleNavClick}>
+            <Link href="/blog" className="text-slate-400 hover:text-indigo-400 transition py-2" onClick={handleNavClick}>
               Blog
             </Link>
-            <Link href="/projects" className="text-cream-dark hover:text-phoenix-warm transition py-2" onClick={handleNavClick}>
+            <Link href="/projects" className="text-slate-400 hover:text-indigo-400 transition py-2" onClick={handleNavClick}>
               Projects
             </Link>
-            <Link href="/about" className="text-cream-dark hover:text-phoenix-warm transition py-2" onClick={handleNavClick}>
+            <Link href="/about" className="text-slate-400 hover:text-indigo-400 transition py-2" onClick={handleNavClick}>
               About
             </Link>
           </div>
