@@ -36,13 +36,13 @@ p {
 
 /* Links */
 a {
-  color: #818CF8;
+  color: #2dd4bf;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 a:hover {
-  color: #A5B4FC;
+  color: #5eead4;
 }
 
 /* Prose for markdown/article content */
@@ -57,5 +57,5 @@ a:hover {
 
 .subscribe {
   @apply leading-relaxed text-lg;
-  color: #818CF8;
+  color: #2dd4bf;
 }

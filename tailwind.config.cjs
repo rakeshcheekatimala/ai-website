@@ -6,7 +6,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Obsidian & Electric Indigo design system
+      // Dark Navy & Electric Teal design system (Brittany Chiang-inspired)
       colors: {
         // Background layers
         'dark-bg': '#030712',
@@ -15,19 +15,23 @@ module.exports = {
         'dark-border': '#1E293B',
         'dark-border-visible': '#334155',
         'dark-hover': '#1E293B',
+        // Teal accent palette
+        'accent': '#2dd4bf',
+        'accent-light': '#5eead4',
+        'accent-dim': '#0d9488',
       },
 
       boxShadow: {
-        glow: '0 0 20px rgba(99, 102, 241, 0.3)',
-        'glow-sm': '0 0 10px rgba(99, 102, 241, 0.15)',
-        'glow-lg': '0 0 40px rgba(99, 102, 241, 0.4)',
+        glow: '0 0 20px rgba(45, 212, 191, 0.3)',
+        'glow-sm': '0 0 10px rgba(45, 212, 191, 0.15)',
+        'glow-lg': '0 0 40px rgba(45, 212, 191, 0.4)',
         card: '0 4px 20px rgba(0, 0, 0, 0.4)',
-        'card-hover': '0 8px 30px rgba(99, 102, 241, 0.12)',
+        'card-hover': '0 8px 30px rgba(45, 212, 191, 0.12)',
       },
 
       backgroundImage: {
-        'gradient-indigo': 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #A78BFA 100%)',
-        'gradient-soft': 'linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%)',
+        'gradient-teal': 'linear-gradient(135deg, #0d9488 0%, #2dd4bf 50%, #5eead4 100%)',
+        'gradient-soft': 'linear-gradient(135deg, rgba(45, 212, 191, 0.05) 0%, rgba(94, 234, 212, 0.05) 100%)',
         'gradient-dark': 'linear-gradient(180deg, #030712 0%, #0F172A 50%, #030712 100%)',
       },
 
@@ -43,8 +47,8 @@ module.exports = {
           '50%': { transform: 'translateY(-8px)', opacity: '0.85' },
         },
         'glow-pulse': {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(139, 92, 246, 0.5)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(45, 212, 191, 0.3)' },
+          '50%': { boxShadow: '0 0 40px rgba(94, 234, 212, 0.5)' },
         },
         'fade-up': {
           '0%': { opacity: '0', transform: 'translateY(16px)' },
@@ -65,16 +69,16 @@ module.exports = {
             h1: { fontSize: '2.5rem', lineHeight: '1.2' },
             h2: { fontSize: '1.875rem', marginTop: '1.5em' },
             a: {
-              color: '#818CF8',
+              color: '#2dd4bf',
               textDecoration: 'none',
               fontWeight: '500',
               '&:hover': {
-                color: '#A5B4FC',
+                color: '#5eead4',
                 textDecoration: 'underline',
               },
             },
             code: {
-              color: '#A5B4FC',
+              color: '#5eead4',
               backgroundColor: '#0F172A',
               padding: '0.25em 0.5em',
               borderRadius: '0.375rem',
@@ -88,7 +92,7 @@ module.exports = {
             },
             blockquote: {
               color: '#94A3B8',
-              borderLeftColor: '#6366F1',
+              borderLeftColor: '#2dd4bf',
             },
             strong: {
               color: '#F8FAFC',
