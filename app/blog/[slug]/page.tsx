@@ -1,8 +1,14 @@
 import Link from 'next/link'
-import { mockPosts } from '../../../lib/mock-data'
+import { getPostBySlug, getAllPostSlugs } from '../../../lib/mdx'
 
-export default function PostPage({ params }: { params: { slug: string } }) {
-  const post = mockPosts.find(p => p.slug === params.slug)
+export async function generateStaticParams() {
+  const slugs = await getAllPostSlugs()
+  return slugs.map(slug => ({ slug }))
+}
+
+export default async function PostPage({ params }: { params: { slug: string } }) {
+  const post = await getPostBySlug(params.slug)
+  
   if (!post) return <p className="text-center py-20">Post not found</p>
 
   return (
@@ -20,9 +26,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
       </header>
       
       <div className="prose prose-lg max-w-none">
-        <p className="text-lg text-slate-700 leading-relaxed whitespace-pre-wrap">
-          {post.content}
-        </p>
+        {post.content}
       </div>
 
       <footer className="mt-16 pt-8 border-t border-slate-200">

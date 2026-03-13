@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Card from '../components/Card'
+import LocationBanner from '../components/LocationBanner'
 import { getMockPosts, getMockProjects } from '../lib/mock-data'
 
 export default async function Home() {
@@ -11,22 +12,22 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="py-20 md:py-28 lg:py-36 max-w-4xl mx-auto px-6">
         <div className="space-y-6 mb-12">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-slate-900">
-            Making testing easier so you can be<span className="text-sky-600"> confident</span> in your code.
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-slate-50">
+            Making testing easier so you can be<span className="text-indigo-400"> confident</span> in your code.
           </h1>
-          <p className="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-2xl">
+          <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-2xl">
             Learn testing best practices, modern web development, and building great developer experiences through hands-on tutorials and in-depth articles.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-6">
             <Link 
               href="/blog" 
-              className="inline-block px-8 py-4 bg-slate-900 text-white font-semibold rounded-lg hover:bg-slate-800 transition"
+              className="inline-block px-8 py-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-500 transition"
             >
               Read Articles →
             </Link>
             <Link 
-              href="/projects" 
-              className="inline-block px-8 py-4 bg-slate-100 text-slate-900 font-semibold rounded-lg hover:bg-slate-200 transition"
+              href="/work" 
+              className="inline-block px-8 py-4 bg-slate-800 text-slate-50 font-semibold rounded-lg hover:bg-slate-700 border border-slate-700 transition"
             >
               View Work
             </Link>
@@ -34,13 +35,18 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Location Banner */}
+      <div className="max-w-4xl mx-auto px-6">
+        <LocationBanner />
+      </div>
+
       {/* Featured Work */}
       <section className="py-20 md:py-28 max-w-4xl mx-auto px-6">
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-50 mb-4">
             Featured Work
           </h2>
-          <p className="text-xl text-slate-600">
+          <p className="text-xl text-slate-400">
             A selection of projects and explorations in web development & testing.
           </p>
         </div>
@@ -54,10 +60,10 @@ export default async function Home() {
       {/* Latest Articles */}
       <section className="py-20 md:py-28 max-w-4xl mx-auto px-6">
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-50 mb-4">
             Latest Articles
           </h2>
-          <p className="text-xl text-slate-600">
+          <p className="text-xl text-slate-400">
             In-depth guides and tutorials on testing, development, and best practices.
           </p>
         </div>
@@ -67,7 +73,7 @@ export default async function Home() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <Link href="/blog" className="inline-block text-lg font-semibold text-sky-600 hover:text-sky-700">
+          <Link href="/blog" className="inline-block text-lg font-semibold text-indigo-400 hover:text-indigo-300 transition">
             View all articles →
           </Link>
         </div>
