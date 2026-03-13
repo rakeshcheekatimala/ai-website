@@ -43,45 +43,6 @@ export default async function Home() {
       <div className="max-w-4xl mx-auto px-6">
         <LocationBanner />
       </div>
-
-      {/* Featured Work */}
-      <section className="py-20 md:py-28 max-w-4xl mx-auto px-6">
-        <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-50 mb-4">
-            Featured Work
-          </h2>
-          <p className="text-xl text-slate-400">
-            A selection of projects and explorations in web development & testing.
-          </p>
-        </div>
-        <div className="grid gap-8 md:grid-cols-2">
-          {projects.map(p => (
-            <Card key={p.slug} title={p.title} description={p.summary} href={`/projects/${p.slug}`} />
-          ))}
-        </div>
-      </section>
-
-      {/* Latest Articles */}
-      <section className="py-20 md:py-28 max-w-4xl mx-auto px-6">
-        <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-50 mb-4">
-            Latest Articles
-          </h2>
-          <p className="text-xl text-slate-400">
-            In-depth guides and tutorials on testing, development, and best practices.
-          </p>
-        </div>
-        <div className="grid gap-8 md:grid-cols-2">
-          {posts.slice(0, 4).map(post => (
-            <Card key={post.slug} title={post.title} description={post.excerpt} href={`/blog/${post.slug}`} />
-          ))}
-        </div>
-        <div className="mt-12 text-center">
-          <Link href="/blog" className="inline-block text-lg font-semibold text-indigo-400 hover:text-indigo-300 transition">
-            View all articles →
-          </Link>
-        </div>
-      </section>
     </>
   )
 }

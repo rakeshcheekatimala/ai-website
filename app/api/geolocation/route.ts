@@ -81,6 +81,8 @@ export async function GET(request: NextRequest) {
       city: geo.city || 'Unknown',
       country: geo.country_name || 'Unknown',
       timezone: geo.timezone || 'Unknown',
+      latitude: geo.latitude,
+      longitude: geo.longitude,
       ip: ip
     })
   } catch (error) {
