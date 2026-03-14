@@ -15,7 +15,8 @@ export default async function Home() {
       <section className="py-20 md:py-28 lg:py-36 max-w-4xl mx-auto px-6">
         <div className="space-y-6 mb-12">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-slate-50">
-            Hello, I&apos;m Rakesh!
+            Hello 👋  
+            <span className="text-teal-400">&nbsp;I&apos;m Rakesh!</span>
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-2xl">
           Currently based in Singapore with 10+ years of experience building scalable frontend systems and developer tooling.

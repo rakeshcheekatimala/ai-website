@@ -19,17 +19,17 @@ export default function About() {
         </p>
 
         <div className="pt-8 border-t border-slate-800">
-          <h2 className="text-3xl font-bold text-slate-50 mb-4">
+          <h2 className="text-3xl font-bold text-slate-50 mb-4 text-teal-400">
             Let&apos;s Connect
           </h2>
           <p className="mb-6 text-slate-400">
             Interested in collaborating or just want to chat? Feel free to reach out on social media or drop me an email.
           </p>
           <div className="flex gap-4">
-            <a href="https://www.linkedin.com/in/rakesh-cheekatimala/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-500 transition">
+            <a href="https://www.linkedin.com/in/rakesh-cheekatimala/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-500 transition" style={{ color: '#ffffff' }}>
               LinkedIn
             </a>
-            <a href="https://github.com/rakeshcheekatimala" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-slate-800 text-slate-50 font-semibold rounded-lg hover:bg-slate-700 border border-slate-700 transition">
+            <a href="https://github.com/rakeshcheekatimala" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-slate-800 text-slate-50 font-semibold rounded-lg hover:bg-slate-700 border border-slate-700 transition" style={{ color: '#ffffff' }}>
               GitHub
             </a>
           </div>

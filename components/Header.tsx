@@ -59,8 +59,8 @@ export default function Header() {
           <Link href="https://rakeshcheekatimala.substack.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-teal-300 transition" onClick={handleNavClick}>
             Blog
           </Link>
-          <Link href="/projects" className="text-slate-400 hover:text-teal-300 transition" onClick={handleNavClick}>
-            Projects
+          <Link href="/work" className="text-slate-400 hover:text-teal-300 transition" onClick={handleNavClick}>
+            Work
           </Link>
           <Link href="/about" className="text-slate-400 hover:text-teal-300 transition" onClick={handleNavClick}>
             About
