@@ -7,7 +7,7 @@ export default function Footer() {
             <h4 className="font-bold text-slate-50 mb-4">Site</h4>
             <ul className="space-y-2 text-slate-400">
               <li><a href="/" className="hover:text-teal-300 transition">Home</a></li>
-              <li><a href="/blog" className="hover:text-teal-300 transition">Blog</a></li>
+              <li><a href="https://rakeshcheekatimala.substack.com" target="_blank" rel="noopener noreferrer" className="hover:text-teal-300 transition">Blog</a></li>
               <li><a href="/projects" className="hover:text-teal-300 transition">Work</a></li>
               <li><a href="/about" className="hover:text-teal-300 transition">About</a></li>
             </ul>

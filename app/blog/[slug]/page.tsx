@@ -13,7 +13,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
 
   return (
     <article className="max-w-3xl mx-auto px-6 py-20">
-      <Link href="/blog" className="text-teal-400 hover:text-teal-300 mb-8 inline-block font-semibold">
+      <Link href="https://rakeshcheekatimala.substack.com" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 mb-8 inline-block font-semibold">
         ← Back to Blog
       </Link>
       

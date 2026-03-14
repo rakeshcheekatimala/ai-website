@@ -128,7 +128,7 @@ export default function Header() {
       {isMenuOpen && (
         <nav className="md:hidden border-t border-slate-800 bg-slate-900/90 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
-            <Link href="/blog" className="text-slate-400 hover:text-teal-300 transition py-2" onClick={handleNavClick}>
+            <Link href="https://rakeshcheekatimala.substack.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-teal-300 transition py-2" onClick={handleNavClick}>
               Blog
             </Link>
             <Link href="/projects" className="text-slate-400 hover:text-teal-300 transition py-2" onClick={handleNavClick}>
