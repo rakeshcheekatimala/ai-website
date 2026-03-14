@@ -15,9 +15,9 @@ export default function ExperienceTimeline() {
       <ol className="relative border-l border-slate-700 space-y-12 pl-6 md:pl-8">
         {experiences.map((exp, index) => (
           <li key={`${exp.company}-${exp.role}-${index}`} className="ml-2 md:ml-4">
-            <div className="absolute -left-[9px] md:-left-[11px] mt-1.5 h-4 w-4 md:h-5 md:w-5 rounded-full border-2 border-indigo-500 bg-slate-900" />
+            <div className="absolute -left-[9px] md:-left-[11px] mt-1.5 h-4 w-4 md:h-5 md:w-5 rounded-full border-2 border-teal-400 bg-slate-900" />
 
-            <div className="rounded-xl border border-slate-800 bg-slate-900/60 backdrop-blur-sm p-6 md:p-8 shadow-card hover:shadow-card-hover hover:border-indigo-500/30 transition-all duration-300">
+            <div className="rounded-xl border border-slate-800 bg-slate-900/60 backdrop-blur-sm p-6 md:p-8 shadow-card hover:shadow-card-hover hover:border-teal-500/30 transition-all duration-300">
               <header className="mb-4 flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
                 <div>
                   <h3 className="text-2xl font-semibold text-slate-50">
@@ -52,7 +52,7 @@ export default function ExperienceTimeline() {
                   {exp.tags.map(tag => (
                     <span
                       key={tag}
-                      className="inline-flex items-center rounded-full bg-indigo-500/10 px-3 py-1 text-xs font-medium text-indigo-300 border border-indigo-500/20"
+                      className="inline-flex items-center rounded-full bg-teal-500/10 px-3 py-1 text-xs font-medium text-teal-300 border border-teal-500/20"
                     >
                       {tag}
                     </span>

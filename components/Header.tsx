@@ -56,19 +56,19 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8 items-center text-lg">
-          <Link href="https://rakeshcheekatimala.substack.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-400 transition" onClick={handleNavClick}>
+          <Link href="https://rakeshcheekatimala.substack.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-teal-300 transition" onClick={handleNavClick}>
             Blog
           </Link>
-          <Link href="/projects" className="text-slate-400 hover:text-indigo-400 transition" onClick={handleNavClick}>
+          <Link href="/projects" className="text-slate-400 hover:text-teal-300 transition" onClick={handleNavClick}>
             Projects
           </Link>
-          <Link href="/about" className="text-slate-400 hover:text-indigo-400 transition" onClick={handleNavClick}>
+          <Link href="/about" className="text-slate-400 hover:text-teal-300 transition" onClick={handleNavClick}>
             About
           </Link>
 
           <button
             onClick={toggleSound}
-            className="text-slate-400 hover:text-indigo-400 transition p-2 rounded-lg hover:bg-slate-800 duration-200"
+            className="text-slate-400 hover:text-teal-300 transition p-2 rounded-lg hover:bg-slate-800 duration-200"
             aria-label={soundEnabled ? "Mute sound" : "Unmute sound"}
             title={soundEnabled ? "Click to mute" : "Click to unmute"}
           >
@@ -89,7 +89,7 @@ export default function Header() {
         <div className="flex md:hidden gap-3 items-center">
           <button
             onClick={toggleSound}
-            className="text-slate-400 hover:text-indigo-400 transition p-2 rounded-lg hover:bg-slate-800 duration-200"
+            className="text-slate-400 hover:text-teal-300 transition p-2 rounded-lg hover:bg-slate-800 duration-200"
             aria-label={soundEnabled ? "Mute sound" : "Unmute sound"}
             title={soundEnabled ? "Click to mute" : "Click to unmute"}
           >
@@ -107,7 +107,7 @@ export default function Header() {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-slate-400 hover:text-indigo-400 transition p-2 rounded-lg hover:bg-slate-800 duration-200"
+            className="text-slate-400 hover:text-teal-300 transition p-2 rounded-lg hover:bg-slate-800 duration-200"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -128,13 +128,13 @@ export default function Header() {
       {isMenuOpen && (
         <nav className="md:hidden border-t border-slate-800 bg-slate-900/90 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
-            <Link href="/blog" className="text-slate-400 hover:text-indigo-400 transition py-2" onClick={handleNavClick}>
+            <Link href="/blog" className="text-slate-400 hover:text-teal-300 transition py-2" onClick={handleNavClick}>
               Blog
             </Link>
-            <Link href="/projects" className="text-slate-400 hover:text-indigo-400 transition py-2" onClick={handleNavClick}>
+            <Link href="/projects" className="text-slate-400 hover:text-teal-300 transition py-2" onClick={handleNavClick}>
               Projects
             </Link>
-            <Link href="/about" className="text-slate-400 hover:text-indigo-400 transition py-2" onClick={handleNavClick}>
+            <Link href="/about" className="text-slate-400 hover:text-teal-300 transition py-2" onClick={handleNavClick}>
               About
             </Link>
           </div>

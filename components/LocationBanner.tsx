@@ -133,7 +133,7 @@ export default function LocationBanner() {
         type: 'line',
         source: 'arc',
         paint: {
-          'line-color': '#f43f5e',
+          'line-color': '#2dd4bf',
           'line-width': 6,
           'line-blur': 8,
           'line-opacity': 0.4,
@@ -146,14 +146,14 @@ export default function LocationBanner() {
         type: 'line',
         source: 'arc',
         paint: {
-          'line-color': '#f43f5e',
+          'line-color': '#2dd4bf',
           'line-width': 2.5,
           'line-dasharray': [4, 4],
         },
       })
 
       // Singapore marker (origin)
-      const sgEl = PulsingDot({ color: '#f43f5e' })
+      const sgEl = PulsingDot({ color: '#2dd4bf' })
       new mapboxgl.Marker({ element: sgEl, anchor: 'center' })
         .setLngLat(SINGAPORE)
         .addTo(map.current)
@@ -191,7 +191,7 @@ export default function LocationBanner() {
         <div ref={mapContainer} className="w-full h-80" />
       ) : (
         <div className="w-full h-80 bg-slate-900 flex items-center justify-center">
-          <p className="text-slate-600 text-sm">Map unavailable — add NEXT_PUBLIC_MAPBOX_TOKEN to .env</p>
+          <p className="text-slate-400 text-sm">Map unavailable — add NEXT_PUBLIC_MAPBOX_TOKEN to .env</p>
         </div>
       )}
 
@@ -200,7 +200,7 @@ export default function LocationBanner() {
         <p className="text-slate-200 text-lg leading-relaxed">
           I&apos;m from{' '}
           <span className="text-white font-semibold">Singapore</span>, roughly{' '}
-          <span className="text-rose-400 font-bold font-mono">
+          <span className="text-teal-400 font-bold font-mono">
             {location.distance.toLocaleString()}km
           </span>{' '}
           away from your current location, according to your IP address.
