@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Card from '../components/Card'
 import LocationBanner from '../components/LocationBanner'
 import SocailLinks from '../components/SocailLinks'
+import AskAgentButton from '../components/AskAgentButton'
 import { getMockPosts, getMockProjects } from '../lib/mock-data'
 
 export default async function Home() {
@@ -22,6 +23,7 @@ export default async function Home() {
           I care deeply about the craft behind them by implementing the principles of clean architecture, reliable tests, and systems that hold up.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-6">
+            <AskAgentButton />
             <Link 
               href="https://rakeshcheekatimala.substack.com" 
               target="_blank"
