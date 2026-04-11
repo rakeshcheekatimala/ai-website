@@ -7,7 +7,7 @@ export const metadata = {
   title: 'Rakesh Cheekatimala - Senior Frontend Platform Engineer',
   description: 'Senior frontend engineer in Singapore building performance-focused web platforms, payments flows, eKYC systems, and developer tooling.',
   icons: {
-    icon: '/images/mascot.png',
+    icon: '/images/profilepic.jpeg',
   },
 }
 

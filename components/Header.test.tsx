@@ -5,7 +5,7 @@ describe('Header', () => {
   it('renders the logo and site name', () => {
     render(<Header />)
     
-    expect(screen.getByAltText('Mascot')).toBeInTheDocument()
+    expect(screen.getByAltText('Profile Picture')).toBeInTheDocument()
     expect(screen.getByText('Rakesh')).toBeInTheDocument()
   })
 

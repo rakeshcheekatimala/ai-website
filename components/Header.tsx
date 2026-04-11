@@ -15,8 +15,8 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
           <Image
-            src="/images/mascot.png"
-            alt="Mascot"
+            src="/images/profilepic.jpeg"
+            alt="Profile Picture"
             width={50}
             height={50}
             className="rounded-lg"

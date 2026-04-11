@@ -19,6 +19,11 @@ describe('AskAgentButton', () => {
     expect(screen.getByRole('button', { name: /ask my agent/i })).toBeInTheDocument()
   })
 
+  it('explains what the agent does', () => {
+    render(<AskAgentButton />)
+    expect(screen.getByText(/AI trained on my work and experience/i)).toBeInTheDocument()
+  })
+
   it('opens ChatModal when clicked', () => {
     render(<AskAgentButton />)
     expect(screen.queryByTestId('chat-modal')).not.toBeInTheDocument()

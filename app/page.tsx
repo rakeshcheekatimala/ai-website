@@ -28,18 +28,18 @@ export default async function Home() {
           <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl">
             I&apos;m Rakesh Cheekatimala, a Singapore-based engineer with 10+ years across payments, eKYC, property, commerce, and enterprise platforms. I focus on performance, clean architecture, reliable tests, and developer tooling that helps teams ship with confidence.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 pt-6">
+          <div className="flex flex-col gap-4 pt-6 sm:flex-row sm:items-start">
             <AskAgentButton />
             <Link
               href="/projects"
-              className="inline-block px-8 py-4 bg-teal-600 font-semibold rounded-lg hover:bg-teal-500 transition text-center"
+              className="inline-flex min-h-14 w-full items-center justify-center rounded-lg bg-teal-600 px-6 py-3.5 text-center font-semibold transition hover:bg-teal-500 sm:w-auto"
               style={{ color: '#ffffff' }}
             >
               View Case Studies
             </Link>
-            <Link 
-              href="/work" 
-              className="inline-block px-8 py-4 bg-slate-800 font-semibold rounded-lg hover:bg-slate-700 border border-slate-700 transition text-center"
+            <Link
+              href="/work"
+              className="inline-flex min-h-14 w-full items-center justify-center rounded-lg border border-slate-700 bg-slate-800 px-6 py-3.5 text-center font-semibold transition hover:bg-slate-700 sm:w-auto"
               style={{ color: '#ffffff' }}
             >
               View Work
