@@ -5,4 +5,10 @@ date: "2024-12-20"
 excerpt: "A collection of testing strategies and patterns for modern apps."
 ---
 
-Full content for testing patterns...
+Testing scales when it supports how the team actually ships. A healthy test suite is not just a high coverage number; it is a feedback system that catches meaningful regressions without making every change feel expensive.
+
+I like to separate frontend tests by the question they answer. Unit tests protect small decisions and utility logic. Component tests protect states, accessibility, and user interactions. Integration tests protect the important workflows where several pieces meet. End-to-end tests should stay focused on the few journeys where a broken flow would hurt users or revenue.
+
+The pattern that keeps teams moving is to put the most coverage around stable contracts and business-critical paths. For example, checkout, onboarding, eKYC verification, and account flows deserve more protection than a decorative layout variant.
+
+The goal is confidence. A good suite lets engineers refactor with less fear, reviewers focus on design decisions, and teams ship without relying on memory as the quality gate.

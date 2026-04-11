@@ -8,7 +8,14 @@ jest.mock('../../../lib/mock-data', () => ({
       title: 'Test Project',
       slug: 'test-project',
       summary: 'This is a test project summary',
+      outcome: 'This is a test project outcome',
+      context: 'This is test context',
+      role: 'Led the test project',
+      metrics: ['Metric one'],
+      highlights: ['Changed one thing'],
+      tags: ['React'],
       url: 'https://example.com',
+      repoUrl: 'https://github.com/example/test',
     },
     {
       title: 'Another Project',
@@ -35,7 +42,7 @@ describe('ProjectPage', () => {
   it('renders back to work links', () => {
     render(<ProjectPage params={{ slug: 'test-project' }} />)
     
-    const backLinks = screen.getAllByRole('link', { name: /back to work/i })
+    const backLinks = screen.getAllByRole('link', { name: /back to case studies/i })
     expect(backLinks.length).toBeGreaterThan(0)
     expect(backLinks[0]).toHaveAttribute('href', '/projects')
   })
@@ -47,10 +54,11 @@ describe('ProjectPage', () => {
     expect(screen.getByRole('link', { name: /github/i })).toBeInTheDocument()
   })
 
-  it('renders example project description', () => {
+  it('renders case study details', () => {
     render(<ProjectPage params={{ slug: 'test-project' }} />)
     
-    expect(screen.getByText(/This is an example project/)).toBeInTheDocument()
-    expect(screen.getByText(/modern web development practices/)).toBeInTheDocument()
+    expect(screen.getByText(/This is test context/)).toBeInTheDocument()
+    expect(screen.getByText(/Led the test project/)).toBeInTheDocument()
+    expect(screen.getByText(/Metric one/)).toBeInTheDocument()
   })
 })

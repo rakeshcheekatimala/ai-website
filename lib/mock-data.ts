@@ -1,4 +1,7 @@
 import { getAllPosts } from './mdx'
+import { mockProjects, type Project } from './projects'
+
+export { mockProjects, type Project } from './projects'
 
 export type Post = {
   title: string
@@ -7,28 +10,6 @@ export type Post = {
   content: string
   date: string
 }
-
-export type Project = {
-  title: string
-  slug: string
-  summary: string
-  url?: string
-}
-
-export const mockProjects: Project[] = [
-  {
-    title: 'Interactive AI Playground',
-    slug: 'ai-playground',
-    summary: 'A small sandbox for testing models and UI ideas.',
-    url: '#'
-  },
-  {
-    title: 'Accessible Component Library',
-    slug: 'accessible-ui',
-    summary: 'A tiny library focusing on accessibility and composability.',
-    url: '#'
-  }
-]
 
 export async function getMockPosts(): Promise<Post[]> {
   const posts = await getAllPosts()

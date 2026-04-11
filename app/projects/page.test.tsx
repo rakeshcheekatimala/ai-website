@@ -36,8 +36,8 @@ describe('ProjectsPage', () => {
     const page = await ProjectsPage()
     const { container } = render(page)
     
-    expect(screen.getByText('Work')).toBeInTheDocument()
-    expect(screen.getByText(/A collection of projects/)).toBeInTheDocument()
+    expect(screen.getByText('Engineering work with measurable value')).toBeInTheDocument()
+    expect(screen.getByText(/frontend architecture, performance, quality/)).toBeInTheDocument()
   })
 
   it('renders all projects', async () => {

@@ -42,7 +42,7 @@ describe('PostPage', () => {
     
     const backLinks = screen.getAllByRole('link', { name: /back to blog/i })
     expect(backLinks.length).toBeGreaterThan(0)
-    expect(backLinks[0]).toHaveAttribute('href', 'https://rakeshcheekatimala.substack.com')
+    expect(backLinks[0]).toHaveAttribute('href', '/blog')
   })
 
   it('renders as an article element', async () => {

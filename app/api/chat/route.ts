@@ -8,6 +8,7 @@ import {
 } from 'ai'
 import { NextRequest } from 'next/server'
 import { experiences } from '../../../experiences'
+import { mockProjects } from '../../../lib/projects'
 
 // Simple in-memory rate limiter: max 10 requests per IP per minute
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>()
@@ -26,27 +27,28 @@ function isRateLimited(ip: string): boolean {
   return false
 }
 
-const summaryText = `I am a detail-oriented Software Engineer with a strong passion for building high-quality, scalable web applications. I approach software development with a design thinking mindset, focusing on creating intuitive user experiences while maintaining clean, maintainable, and modular code.
+const summaryText = `Rakesh Cheekatimala is a Singapore-based Senior Frontend Platform Engineer with 10+ years of experience across payments, eKYC, property, e-commerce, enterprise platforms, and developer tooling.
 
-I enjoy solving complex engineering problems and continuously improving systems through best engineering practices, modern JavaScript frameworks, and agile methodologies. My development philosophy centers on building reusable components, writing reliable tests, and delivering production-ready applications that scale.
+Positioning:
+• Builds revenue-critical frontend systems that teams can trust
+• Strong in React, TypeScript, frontend architecture, performance, testing, CI/CD, Storybook, and developer tooling
+• Connects engineering decisions to business outcomes, especially in payments, onboarding, and platform work
 
-I have hands-on experience building modern frontend applications using JavaScript and TypeScript ecosystems, with a strong focus on performance, maintainability, and developer experience.
-
-Core Technical Expertise:
-• Developing modern web applications using React.js, Redux, Hooks
-• Component-driven architecture with reusable and modular design patterns
-• Styling solutions using Styled Components and SASS
-• Writing robust unit tests using Jest and React Testing Library
-• Implementing End-to-End testing with Cypress
-• Building scalable applications using TypeScript
-• Applying Agile methodologies and collaborative engineering practices
+Selected impact:
+• Reduced a payments application bundle size by 60% through lazy loading and frontend refactoring
+• Contributed to new payment methods that helped drive a 25% sales lift
+• Built save-card capability that helped drive an additional 3% sales lift
+• Designed a React and Rollup micro-frontend solution for eKYC registration, verification, and outcome flows
+• Improved test automation coverage by 30% at 99.co
+• Built internal Node.js CLI tooling, Storybook documentation, Cypress workflows, Lighthouse audit practices, and CI quality gates
 
 Open Source Contributions:
 • Delete Duplicate Rows in Excel — https://github.com/rakeshcheekatimala/delete_duplicate_rows_excel
 • Open Hangouts — https://github.com/rakeshcheekatimala/openHangouts
 • React Boilerplate — https://github.com/rakeshcheekatimala/react-boiler-plate
 
-I actively explore ways to contribute to the developer ecosystem and enjoy building tools that improve developer productivity.`
+Writing:
+• Writes about frontend architecture, testing, developer experience, and practical AI experiments`
 
 function buildExperienceContext(): string {
   return experiences
@@ -62,15 +64,42 @@ Technologies: ${tags}`
     .join('\n\n')
 }
 
-const systemPrompt = `You are Rakesh Cheekatimala's personal AI assistant on his portfolio website. Your job is to answer questions about Rakesh's professional background, skills, work experience, and projects. Be concise, friendly, and professional. Speak in third person about Rakesh (e.g. "Rakesh has worked at...").
+function buildProjectContext(): string {
+  return mockProjects
+    .map((project) => {
+      const metrics = project.metrics?.map((metric) => `  - ${metric}`).join('\n') ?? '  - Not specified'
+      const highlights = project.highlights?.map((highlight) => `  - ${highlight}`).join('\n') ?? '  - Not specified'
+      const tags = project.tags?.join(', ') ?? 'Not specified'
+      return `${project.title}
+Summary: ${project.summary}
+Outcome: ${project.outcome ?? 'Not specified'}
+Context: ${project.context ?? 'Not specified'}
+Role: ${project.role ?? 'Not specified'}
+Metrics:
+${metrics}
+Highlights:
+${highlights}
+Technologies: ${tags}`
+    })
+    .join('\n\n')
+}
+
+const systemPrompt = `You are Rakesh Cheekatimala's personal AI assistant on his portfolio website. Your job is to answer questions about Rakesh's professional background, skills, work experience, case studies, and projects. Be concise, friendly, and professional. Speak in third person about Rakesh (e.g. "Rakesh has worked at...").
+
+When someone asks why Rakesh is valuable, connect his work to business outcomes: revenue-critical frontend systems, payments performance, eKYC architecture, testing quality, developer tooling, and team velocity.
 
 If asked something unrelated to Rakesh's professional background, politely redirect the conversation back to topics you can help with.
+
+Do not invent employers, credentials, private client details, or metrics. If the answer is not in the context below, say what you can verify and suggest asking Rakesh directly for the missing detail.
 
 --- ABOUT RAKESH ---
 ${summaryText}
 
 --- WORK EXPERIENCE ---
-${buildExperienceContext()}`
+${buildExperienceContext()}
+
+--- CASE STUDIES ---
+${buildProjectContext()}`
 
 export async function POST(req: NextRequest) {
   // Fail fast if the key is missing (misconfigured deployment)

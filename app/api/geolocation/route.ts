@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+export const dynamic = 'force-dynamic'
+
 const SINGAPORE = { lat: 1.3521, lon: 103.8198 }
 
 // Mock data for localhost/development
