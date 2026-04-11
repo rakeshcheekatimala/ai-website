@@ -58,12 +58,12 @@ describe('Home Page Integration', () => {
     render(page)
     
     // Hero section
-    expect(screen.getByText(/Hello/)).toBeInTheDocument()
-    expect(screen.getByText(/I'm Rakesh!/)).toBeInTheDocument()
-    expect(screen.getByText(/Currently based in Singapore/)).toBeInTheDocument()
+    expect(screen.getByText(/I build revenue critical frontend systems/i)).toBeInTheDocument()
+    expect(screen.getByText(/Rakesh Cheekatimala/)).toBeInTheDocument()
+    expect(screen.getByText(/Singapore-based engineer/)).toBeInTheDocument()
     
     // CTA buttons
-    expect(screen.getByRole('link', { name: /read articles/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /view case studies/i })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /view work/i })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /ask my agent/i })).toBeInTheDocument()
     
@@ -78,9 +78,9 @@ describe('Home Page Integration', () => {
     const page = await Home()
     render(page)
     
-    const articlesLink = screen.getByRole('link', { name: /read articles/i })
-    expect(articlesLink).toHaveAttribute('target', '_blank')
-    expect(articlesLink).toHaveAttribute('rel', 'noopener noreferrer')
+    const caseStudiesLink = screen.getByRole('link', { name: /view case studies/i })
+    expect(caseStudiesLink).toHaveAttribute('href', '/projects')
+    expect(caseStudiesLink).not.toHaveAttribute('target')
   })
 
   it('has correct internal navigation', async () => {
@@ -101,7 +101,7 @@ describe('Home Page Integration', () => {
     
     // Hero section should be first
     const firstSection = sections[0]
-    expect(firstSection.textContent).toContain('Hello')
+    expect(firstSection.textContent).toContain('revenue critical')
     expect(firstSection.textContent).toContain('Rakesh')
   })
 })

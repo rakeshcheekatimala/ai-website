@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Card({ title, description, href }: { title: string; description: string; href: string }) {
   return (
-    <article className="group flex flex-col p-8 rounded-xl border border-slate-800 bg-slate-900/50 backdrop-blur-sm hover:border-teal-500/40 hover:shadow-card-hover transition-all duration-300">
+    <article className="group flex flex-col p-8 rounded-lg border border-slate-800 bg-slate-900/50 backdrop-blur-sm hover:border-teal-500/40 hover:shadow-card-hover transition-all duration-300">
       <h3 className="text-2xl font-bold text-slate-50 mb-3 group-hover:text-teal-300 transition">
         {title}
       </h3>

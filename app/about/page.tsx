@@ -7,15 +7,15 @@ export default function About() {
       
       <div className="space-y-8 text-lg text-slate-300 leading-relaxed">
         <p>
-          I&apos;m a senior engineer with experience across frontend, platform, and backend systems. I focus on building reliable, user-centric solutions and simplifying complex problems so teams can move with clarity and confidence.
+          I&apos;m a senior frontend platform engineer based in Singapore. Over the last 10+ years, I&apos;ve worked across payments, eKYC, property, e-commerce, enterprise platforms, and developer tooling.
         </p>
         
         <p>
-          Curiosity drives my work. I&apos;m always learning, exploring new ideas, and turning technical challenges into solutions that are stable, scalable, and easy for others to build on.
+          My strongest work sits where product value and engineering quality meet: faster checkout flows, cleaner frontend architecture, reliable testing practices, shared component systems, and tools that help teams move with more confidence.
         </p>
         
         <p>
-          What matters most to me is creating a positive impact on my team, the products I help shape, and the people I work with. My goal is straightforward: continue improving, share what I learn, and build things that make work simpler and better for everyone.
+          I care about systems that hold up after launch. That means clear boundaries, practical documentation, measurable performance work, and code that the next engineer can understand without archaeology.
         </p>
 
         <div className="pt-8 border-t border-slate-800">

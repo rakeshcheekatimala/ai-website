@@ -18,7 +18,7 @@ describe('AboutPage', () => {
   it('renders the introduction text', () => {
     render(<AboutPage />)
     
-    expect(screen.getByText(/I'm a senior engineer with experience/)).toBeInTheDocument()
+    expect(screen.getByText(/senior frontend platform engineer/)).toBeInTheDocument()
   })
 
   it('renders the connect section', () => {
@@ -40,7 +40,7 @@ describe('AboutPage', () => {
   it('renders all paragraphs', () => {
     render(<AboutPage />)
     
-    expect(screen.getByText(/Curiosity drives my work/)).toBeInTheDocument()
-    expect(screen.getByText(/What matters most to me/)).toBeInTheDocument()
+    expect(screen.getByText(/My strongest work sits/)).toBeInTheDocument()
+    expect(screen.getByText(/systems that hold up after launch/)).toBeInTheDocument()
   })
 })

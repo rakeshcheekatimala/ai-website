@@ -36,16 +36,16 @@ describe('Home', () => {
     const page = await Home()
     render(page)
     
-    expect(screen.getByText(/Hello/)).toBeInTheDocument()
-    expect(screen.getByText(/I'm Rakesh!/)).toBeInTheDocument()
+    expect(screen.getByText(/I build revenue critical frontend systems/i)).toBeInTheDocument()
+    expect(screen.getByText(/Rakesh Cheekatimala/)).toBeInTheDocument()
   })
 
   it('renders the introduction text', async () => {
     const page = await Home()
     render(page)
     
-    expect(screen.getByText(/Currently based in Singapore/)).toBeInTheDocument()
-    expect(screen.getByText(/10\+ years of experience/)).toBeInTheDocument()
+    expect(screen.getByText(/Singapore-based engineer/)).toBeInTheDocument()
+    expect(screen.getByText(/10\+ years/)).toBeInTheDocument()
   })
 
   it('renders the AskAgentButton', async () => {
@@ -59,12 +59,19 @@ describe('Home', () => {
     const page = await Home()
     render(page)
     
-    const articlesLink = screen.getByRole('link', { name: /read articles/i })
-    expect(articlesLink).toHaveAttribute('href', 'https://rakeshcheekatimala.substack.com')
-    expect(articlesLink).toHaveAttribute('target', '_blank')
+    const caseStudiesLink = screen.getByRole('link', { name: /view case studies/i })
+    expect(caseStudiesLink).toHaveAttribute('href', '/projects')
     
     const workLink = screen.getByRole('link', { name: /view work/i })
     expect(workLink).toHaveAttribute('href', '/work')
+  })
+
+  it('renders proof points', async () => {
+    const page = await Home()
+    render(page)
+
+    expect(screen.getByText('60%')).toBeInTheDocument()
+    expect(screen.getByText(/bundle-size reduction/)).toBeInTheDocument()
   })
 
   it('renders social links component', async () => {

@@ -7,15 +7,24 @@ describe('Footer', () => {
     
     expect(screen.getByText('Site')).toBeInTheDocument()
     expect(screen.getByText('Social')).toBeInTheDocument()
-    expect(screen.getByText('Newsletter')).toBeInTheDocument()
+    expect(screen.getByText('Writing')).toBeInTheDocument()
   })
 
   it('renders navigation links', () => {
     render(<Footer />)
     
     expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/')
-    expect(screen.getByRole('link', { name: 'Blog' })).toHaveAttribute('href', 'https://rakeshcheekatimala.substack.com')
+    expect(screen.getByRole('link', { name: 'Blog' })).toHaveAttribute('href', '/blog')
+    expect(screen.getByRole('link', { name: 'Work' })).toHaveAttribute('href', '/work')
+    expect(screen.getByRole('link', { name: 'Case Studies' })).toHaveAttribute('href', '/projects')
     expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/about')
+  })
+
+  it('renders real social links', () => {
+    render(<Footer />)
+
+    expect(screen.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', 'https://github.com/rakeshcheekatimala')
+    expect(screen.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', 'https://www.linkedin.com/in/rakesh-cheekatimala/')
   })
 
   it('renders copyright with current year', () => {
