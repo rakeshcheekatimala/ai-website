@@ -5,10 +5,10 @@ import { DefaultChatTransport } from 'ai'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
 const STARTER_QUESTIONS = [
-  'Where has Rakesh worked?',
-  'What are his core skills?',
-  'Tell me about his open source work',
-  'What did he do at Singtel?',
+  "Summarize Rakesh's frontend platform impact",
+  'Which teams would Rakesh fit best?',
+  'Show his payments and eKYC proof',
+  'What delivery risks can he reduce?',
 ]
 
 interface ChatModalProps {
@@ -63,25 +63,24 @@ export default function ChatModal({ onClose }: ChatModalProps) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
-      style={{ backgroundColor: 'rgba(3, 7, 18, 0.85)', backdropFilter: 'blur(8px)' }}
+      style={{ backgroundColor: 'rgba(23, 26, 31, 0.48)', backdropFilter: 'blur(8px)' }}
       onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
     >
       <div
-        className="relative w-full max-w-2xl h-[85vh] flex flex-col rounded-2xl border border-slate-700/50 overflow-hidden"
-        style={{ backgroundColor: '#0F172A', boxShadow: '0 0 60px rgba(45, 212, 191, 0.15)' }}
+        className="relative w-full max-w-2xl h-[85vh] flex flex-col overflow-hidden rounded-lg border border-line bg-white shadow-card-hover"
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-700/50">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-line">
           <div className="flex items-center gap-3">
             <div className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
             <div>
-              <h2 className="text-slate-50 font-semibold text-base leading-tight">Ask My Agent</h2>
-              <p className="text-slate-400 text-xs">Powered by AI · Ask anything about Rakesh</p>
+              <h2 className="text-ink font-semibold text-base leading-tight">Ask My Agent</h2>
+              <p className="text-muted text-xs">Hiring-focused answers about Rakesh&apos;s work</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="text-slate-400 hover:text-slate-200 transition-colors p-1.5 rounded-lg hover:bg-slate-700/50"
+            className="text-muted hover:text-ink transition-colors p-1.5 rounded-lg hover:bg-wash"
             aria-label="Close chat"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -96,15 +95,15 @@ export default function ChatModal({ onClose }: ChatModalProps) {
           {messages.length === 0 && (
             <div className="flex flex-col items-center justify-center h-full gap-6 text-center">
               <div>
-                <p className="text-slate-300 text-base mb-1">Hi there! 👋</p>
-                <p className="text-slate-400 text-sm">Ask me anything about Rakesh&apos;s experience, skills, or projects.</p>
+                <p className="text-graphite text-base mb-1">Ask a focused hiring question.</p>
+                <p className="text-muted text-sm">I can summarize Rakesh&apos;s experience, impact, case studies, and team fit.</p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-md">
                 {STARTER_QUESTIONS.map((q) => (
                   <button
                     key={q}
                     onClick={() => handleStarterClick(q)}
-                    className="text-left px-4 py-3 rounded-xl border border-slate-600/50 text-slate-300 text-sm hover:border-accent/50 hover:text-accent hover:bg-accent/5 transition-all duration-200"
+                    className="rounded-lg border border-line px-4 py-3 text-left text-sm text-graphite transition-all duration-200 hover:border-accent/50 hover:bg-accent-soft hover:text-accent-dim"
                   >
                     {q}
                   </button>
@@ -125,14 +124,14 @@ export default function ChatModal({ onClose }: ChatModalProps) {
               >
                 {message.role === 'assistant' && (
                   <div className="w-7 h-7 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center mr-2.5 mt-0.5 flex-shrink-0">
-                    <span className="text-accent text-xs font-bold">R</span>
+                    <span className="text-accent-dim text-xs font-bold">R</span>
                   </div>
                 )}
                 <div
-                  className={`max-w-[80%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap ${
+                  className={`max-w-[80%] px-4 py-2.5 rounded-lg text-sm leading-relaxed whitespace-pre-wrap ${
                     message.role === 'user'
-                      ? 'bg-accent text-dark-bg font-medium rounded-br-sm'
-                      : 'bg-slate-800/80 text-slate-200 border border-slate-700/40 rounded-bl-sm'
+                      ? 'bg-accent text-white font-medium'
+                      : 'bg-wash text-graphite border border-line'
                   }`}
                 >
                   {text}
@@ -144,9 +143,9 @@ export default function ChatModal({ onClose }: ChatModalProps) {
           {isLoading && (
             <div className="flex justify-start">
               <div className="w-7 h-7 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center mr-2.5 flex-shrink-0">
-                <span className="text-accent text-xs font-bold">R</span>
+                <span className="text-accent-dim text-xs font-bold">R</span>
               </div>
-              <div className="bg-slate-800/80 border border-slate-700/40 px-4 py-3 rounded-2xl rounded-bl-sm">
+              <div className="rounded-lg border border-line bg-wash px-4 py-3">
                 <div className="flex gap-1.5 items-center">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent/60 animate-bounce" style={{ animationDelay: '0ms' }} />
                   <span className="w-1.5 h-1.5 rounded-full bg-accent/60 animate-bounce" style={{ animationDelay: '150ms' }} />
@@ -160,25 +159,25 @@ export default function ChatModal({ onClose }: ChatModalProps) {
         </div>
 
         {/* Input */}
-        <div className="px-4 py-4 border-t border-slate-700/50">
+        <div className="px-4 py-4 border-t border-line">
           <div className="flex gap-2 items-end">
             <textarea
               ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyPress}
-              placeholder="Ask about Rakesh's experience..."
+              placeholder="Ask about Rakesh's fit, impact, or case studies..."
               rows={1}
-              className="flex-1 resize-none bg-slate-800/60 border border-slate-600/50 rounded-xl px-4 py-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/30 transition-all"
+              className="flex-1 resize-none rounded-lg border border-line bg-white px-4 py-3 text-sm text-graphite placeholder-subtle transition-all focus:border-accent/60 focus:outline-none focus:ring-1 focus:ring-accent/30"
               style={{ maxHeight: '120px' }}
             />
             {isLoading ? (
               <button
                 onClick={stop}
-                className="flex-shrink-0 w-10 h-10 rounded-xl bg-slate-700 hover:bg-slate-600 transition-all flex items-center justify-center"
+                className="flex-shrink-0 w-10 h-10 rounded-lg bg-graphite hover:bg-ink transition-all flex items-center justify-center"
                 aria-label="Stop generation"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-slate-300">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-white">
                   <rect x="4" y="4" width="16" height="16" rx="2" />
                 </svg>
               </button>
@@ -186,17 +185,17 @@ export default function ChatModal({ onClose }: ChatModalProps) {
               <button
                 onClick={handleSend}
                 disabled={!input.trim()}
-                className="flex-shrink-0 w-10 h-10 rounded-xl bg-accent hover:bg-accent-light disabled:opacity-40 disabled:cursor-not-allowed transition-all flex items-center justify-center"
+                className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent hover:bg-accent-dim disabled:opacity-40 disabled:cursor-not-allowed transition-all flex items-center justify-center"
                 aria-label="Send message"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-dark-bg">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                   <line x1="22" y1="2" x2="11" y2="13" />
                   <polygon points="22 2 15 22 11 13 2 9 22 2" />
                 </svg>
               </button>
             )}
           </div>
-          <p className="text-slate-600 text-xs text-center mt-2">Press Enter to send · Shift+Enter for new line · Esc to close</p>
+          <p className="text-subtle text-xs text-center mt-2">Press Enter to send - Shift+Enter for new line - Esc to close</p>
         </div>
       </div>
     </div>

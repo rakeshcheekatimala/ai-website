@@ -160,13 +160,13 @@ export default function LocationBanner() {
         },
       })
 
-      // Singapore marker — avatar character
+      // Singapore marker - avatar character
       const sgEl = createAvatarMarker()
       new mapboxgl.Marker({ element: sgEl, anchor: 'bottom' })
         .setLngLat(SINGAPORE)
         .addTo(map.current)
 
-      // User location marker — white pin
+      // User location marker - white pin
       const userEl = document.createElement('div')
       userEl.innerHTML = `
         <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -187,43 +187,31 @@ export default function LocationBanner() {
 
   if (loading) {
     return (
-      <div className="rounded-2xl overflow-hidden border border-slate-800 my-8 animate-pulse bg-slate-900/60 h-80" />
+      <div className="my-8 h-80 animate-pulse overflow-hidden rounded-lg border border-line bg-white" />
     )
   }
 
   if (!location) return null
 
   return (
-    <div className="my-8 rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-2xl">
+    <div className="my-8 overflow-hidden rounded-lg border border-line bg-white shadow-card">
       {MAPBOX_TOKEN ? (
         <div ref={mapContainer} className="w-full h-80" />
       ) : (
-        <div className="w-full h-80 bg-slate-900 flex items-center justify-center">
-          <p className="text-slate-400 text-sm">Map unavailable — add NEXT_PUBLIC_MAPBOX_TOKEN to .env</p>
+        <div className="w-full h-80 bg-wash flex items-center justify-center">
+          <p className="text-muted text-sm">Map unavailable - add NEXT_PUBLIC_MAPBOX_TOKEN to .env</p>
         </div>
       )}
 
       {/* Text section */}
-      <div className="px-8 py-7 text-center border-t border-slate-800 bg-slate-950/80 backdrop-blur-sm">
-        <p className="text-slate-200 text-lg leading-relaxed">
+      <div className="px-8 py-7 text-center border-t border-line bg-white">
+        <p className="text-graphite text-lg leading-relaxed">
           I&apos;m from{' '}
-          <span className="text-white font-semibold">Singapore</span>, roughly{' '}
-          <span className="text-teal-400 font-bold font-mono">
+          <span className="text-ink font-semibold">Singapore</span>, roughly{' '}
+          <span className="text-accent font-bold font-mono">
             {location.distance.toLocaleString()}km
           </span>{' '}
           away from your current location, according to your IP address.
-        </p>
-        <p className="text-slate-500 text-sm mt-3">
-          Thanks to{' '}
-          <a
-            href="https://leerob.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-400 underline underline-offset-2 hover:text-slate-200 transition-colors"
-          >
-            Jane
-          </a>{' '}
-          for this whimsical idea!
         </p>
       </div>
     </div>

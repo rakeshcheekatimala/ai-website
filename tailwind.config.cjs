@@ -6,33 +6,30 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Dark Navy & Electric Teal design system (Brittany Chiang-inspired)
+      // Light editorial system for a senior-engineering portfolio.
       colors: {
-        // Background layers
-        'dark-bg': '#030712',
-        'dark-surface': '#0F172A',
-        'dark-elevated': '#1E293B',
-        'dark-border': '#1E293B',
-        'dark-border-visible': '#334155',
-        'dark-hover': '#1E293B',
-        // Teal accent palette
-        'accent': '#2dd4bf',
-        'accent-light': '#5eead4',
-        'accent-dim': '#0d9488',
+        ink: '#171A1F',
+        graphite: '#2B2F36',
+        muted: '#5B6472',
+        subtle: '#8A94A6',
+        paper: '#FFFFFF',
+        wash: '#F7F8FA',
+        line: '#DDE1E7',
+        accent: '#0F766E',
+        'accent-light': '#14B8A6',
+        'accent-dim': '#115E59',
+        'accent-soft': '#DDF7F2',
       },
 
       boxShadow: {
-        glow: '0 0 20px rgba(45, 212, 191, 0.3)',
-        'glow-sm': '0 0 10px rgba(45, 212, 191, 0.15)',
-        'glow-lg': '0 0 40px rgba(45, 212, 191, 0.4)',
-        card: '0 4px 20px rgba(0, 0, 0, 0.4)',
-        'card-hover': '0 8px 30px rgba(45, 212, 191, 0.12)',
+        glow: '0 12px 30px rgba(15, 118, 110, 0.18)',
+        'glow-sm': '0 8px 18px rgba(15, 118, 110, 0.12)',
+        card: '0 12px 28px rgba(23, 26, 31, 0.08)',
+        'card-hover': '0 18px 36px rgba(23, 26, 31, 0.12)',
       },
 
       backgroundImage: {
-        'gradient-teal': 'linear-gradient(135deg, #0d9488 0%, #2dd4bf 50%, #5eead4 100%)',
-        'gradient-soft': 'linear-gradient(135deg, rgba(45, 212, 191, 0.05) 0%, rgba(94, 234, 212, 0.05) 100%)',
-        'gradient-dark': 'linear-gradient(180deg, #030712 0%, #0F172A 50%, #030712 100%)',
+        'gradient-soft': 'linear-gradient(135deg, rgba(15, 118, 110, 0.08) 0%, rgba(255, 255, 255, 0.72) 100%)',
       },
 
       animation: {
@@ -60,26 +57,26 @@ module.exports = {
         DEFAULT: {
           css: {
             maxWidth: '100%',
-            color: '#CBD5E1',
+            color: '#4B5563',
             'h1,h2,h3,h4,h5,h6': {
-              color: '#F8FAFC',
+              color: '#171A1F',
               fontWeight: '700',
-              letterSpacing: '-0.02em',
+              letterSpacing: '0',
             },
             h1: { fontSize: '2.5rem', lineHeight: '1.2' },
             h2: { fontSize: '1.875rem', marginTop: '1.5em' },
             a: {
-              color: '#2dd4bf',
+              color: '#0F766E',
               textDecoration: 'none',
               fontWeight: '500',
               '&:hover': {
-                color: '#5eead4',
+                color: '#115E59',
                 textDecoration: 'underline',
               },
             },
             code: {
-              color: '#5eead4',
-              backgroundColor: '#0F172A',
+              color: '#115E59',
+              backgroundColor: '#EEF1F4',
               padding: '0.25em 0.5em',
               borderRadius: '0.375rem',
               fontWeight: '500',
@@ -87,15 +84,15 @@ module.exports = {
             'code::before': { content: '""' },
             'code::after': { content: '""' },
             pre: {
-              backgroundColor: '#030712',
-              border: '1px solid #1E293B',
+              backgroundColor: '#171A1F',
+              border: '1px solid #DDE1E7',
             },
             blockquote: {
-              color: '#94A3B8',
-              borderLeftColor: '#2dd4bf',
+              color: '#5B6472',
+              borderLeftColor: '#0F766E',
             },
             strong: {
-              color: '#F8FAFC',
+              color: '#171A1F',
             },
           },
         },

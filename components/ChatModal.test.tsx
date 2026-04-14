@@ -37,25 +37,25 @@ describe('ChatModal', () => {
     render(<ChatModal onClose={mockOnClose} />)
     
     expect(screen.getByText('Ask My Agent')).toBeInTheDocument()
-    expect(screen.getByText(/Powered by AI/)).toBeInTheDocument()
+    expect(screen.getByText(/Hiring-focused answers/)).toBeInTheDocument()
   })
 
   it('renders starter questions when no messages', () => {
     render(<ChatModal onClose={mockOnClose} />)
     
-    expect(screen.getByText('Where has Rakesh worked?')).toBeInTheDocument()
-    expect(screen.getByText('What are his core skills?')).toBeInTheDocument()
-    expect(screen.getByText('Tell me about his open source work')).toBeInTheDocument()
-    expect(screen.getByText('What did he do at Singtel?')).toBeInTheDocument()
+    expect(screen.getByText("Summarize Rakesh's frontend platform impact")).toBeInTheDocument()
+    expect(screen.getByText('Which teams would Rakesh fit best?')).toBeInTheDocument()
+    expect(screen.getByText('Show his payments and eKYC proof')).toBeInTheDocument()
+    expect(screen.getByText('What delivery risks can he reduce?')).toBeInTheDocument()
   })
 
   it('sends message when starter question is clicked', () => {
     render(<ChatModal onClose={mockOnClose} />)
     
-    const starterButton = screen.getByText('Where has Rakesh worked?')
+    const starterButton = screen.getByText("Summarize Rakesh's frontend platform impact")
     fireEvent.click(starterButton)
     
-    expect(mockSendMessage).toHaveBeenCalledWith({ text: 'Where has Rakesh worked?' })
+    expect(mockSendMessage).toHaveBeenCalledWith({ text: "Summarize Rakesh's frontend platform impact" })
   })
 
   it('closes modal when close button is clicked', () => {
@@ -89,7 +89,7 @@ describe('ChatModal', () => {
   it('allows typing in the input field', () => {
     render(<ChatModal onClose={mockOnClose} />)
     
-    const input = screen.getByPlaceholderText(/Ask about Rakesh's experience/)
+    const input = screen.getByPlaceholderText(/Ask about Rakesh's fit/)
     fireEvent.change(input, { target: { value: 'Test message' } })
     
     expect(input).toHaveValue('Test message')
@@ -98,7 +98,7 @@ describe('ChatModal', () => {
   it('sends message when send button is clicked', () => {
     render(<ChatModal onClose={mockOnClose} />)
     
-    const input = screen.getByPlaceholderText(/Ask about Rakesh's experience/)
+    const input = screen.getByPlaceholderText(/Ask about Rakesh's fit/)
     fireEvent.change(input, { target: { value: 'Test message' } })
     
     const sendButton = screen.getByLabelText('Send message')
@@ -110,7 +110,7 @@ describe('ChatModal', () => {
   it('sends message when Enter key is pressed', () => {
     render(<ChatModal onClose={mockOnClose} />)
     
-    const input = screen.getByPlaceholderText(/Ask about Rakesh's experience/)
+    const input = screen.getByPlaceholderText(/Ask about Rakesh's fit/)
     fireEvent.change(input, { target: { value: 'Test message' } })
     fireEvent.keyDown(input, { key: 'Enter', shiftKey: false })
     
@@ -120,7 +120,7 @@ describe('ChatModal', () => {
   it('does not send message when Shift+Enter is pressed', () => {
     render(<ChatModal onClose={mockOnClose} />)
     
-    const input = screen.getByPlaceholderText(/Ask about Rakesh's experience/)
+    const input = screen.getByPlaceholderText(/Ask about Rakesh's fit/)
     fireEvent.change(input, { target: { value: 'Test message' } })
     fireEvent.keyDown(input, { key: 'Enter', shiftKey: true })
     
@@ -137,7 +137,7 @@ describe('ChatModal', () => {
   it('clears input after sending message', () => {
     render(<ChatModal onClose={mockOnClose} />)
     
-    const input = screen.getByPlaceholderText(/Ask about Rakesh's experience/) as HTMLTextAreaElement
+    const input = screen.getByPlaceholderText(/Ask about Rakesh's fit/) as HTMLTextAreaElement
     fireEvent.change(input, { target: { value: 'Test message' } })
     
     const sendButton = screen.getByLabelText('Send message')
@@ -204,7 +204,7 @@ describe('ChatModal', () => {
   it('does not send empty messages', () => {
     render(<ChatModal onClose={mockOnClose} />)
     
-    const input = screen.getByPlaceholderText(/Ask about Rakesh's experience/)
+    const input = screen.getByPlaceholderText(/Ask about Rakesh's fit/)
     fireEvent.change(input, { target: { value: '   ' } })
     
     const sendButton = screen.getByLabelText('Send message')

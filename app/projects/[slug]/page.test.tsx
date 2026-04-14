@@ -10,6 +10,11 @@ jest.mock('../../../lib/mock-data', () => ({
       summary: 'This is a test project summary',
       outcome: 'This is a test project outcome',
       context: 'This is test context',
+      problem: 'This is the test problem',
+      constraints: 'This is the test constraint',
+      approach: ['Decision one'],
+      impact: 'This is the test impact',
+      roleDetails: 'Owned the detailed role',
       role: 'Led the test project',
       metrics: ['Metric one'],
       highlights: ['Changed one thing'],
@@ -30,7 +35,7 @@ describe('ProjectPage', () => {
     render(<ProjectPage params={{ slug: 'test-project' }} />)
     
     expect(screen.getByText('Test Project')).toBeInTheDocument()
-    expect(screen.getByText('This is a test project summary')).toBeInTheDocument()
+    expect(screen.getByText('This is the test problem')).toBeInTheDocument()
   })
 
   it('renders not found message when slug does not exist', () => {
@@ -57,8 +62,11 @@ describe('ProjectPage', () => {
   it('renders case study details', () => {
     render(<ProjectPage params={{ slug: 'test-project' }} />)
     
-    expect(screen.getByText(/This is test context/)).toBeInTheDocument()
-    expect(screen.getByText(/Led the test project/)).toBeInTheDocument()
+    expect(screen.getByText(/This is the test problem/)).toBeInTheDocument()
+    expect(screen.getByText(/This is the test constraint/)).toBeInTheDocument()
+    expect(screen.getByText(/Owned the detailed role/)).toBeInTheDocument()
+    expect(screen.getByText(/Decision one/)).toBeInTheDocument()
+    expect(screen.getByText(/This is the test impact/)).toBeInTheDocument()
     expect(screen.getByText(/Metric one/)).toBeInTheDocument()
   })
 })

@@ -30,32 +30,32 @@ function isRateLimited(ip: string): boolean {
 const summaryText = `Rakesh Cheekatimala is a Singapore-based Senior Frontend Platform Engineer with 10+ years of experience across payments, eKYC, property, e-commerce, enterprise platforms, and developer tooling.
 
 Positioning:
-• Builds revenue-critical frontend systems that teams can trust
-• Strong in React, TypeScript, frontend architecture, performance, testing, CI/CD, Storybook, and developer tooling
-• Connects engineering decisions to business outcomes, especially in payments, onboarding, and platform work
+- Builds revenue-critical frontend systems that teams can trust
+- Strong in React, TypeScript, frontend architecture, performance, testing, CI/CD, Storybook, and developer tooling
+- Connects engineering decisions to business outcomes, especially in payments, onboarding, and platform work
 
 Selected impact:
-• Reduced a payments application bundle size by 60% through lazy loading and frontend refactoring
-• Contributed to new payment methods that helped drive a 25% sales lift
-• Built save-card capability that helped drive an additional 3% sales lift
-• Designed a React and Rollup micro-frontend solution for eKYC registration, verification, and outcome flows
-• Improved test automation coverage by 30% at 99.co
-• Built internal Node.js CLI tooling, Storybook documentation, Cypress workflows, Lighthouse audit practices, and CI quality gates
+- Reduced a payments application bundle size by 60% through lazy loading and frontend refactoring
+- Contributed to new payment methods that helped drive a 25% sales lift
+- Built save-card capability that helped drive an additional 3% sales lift
+- Designed a React and Rollup micro-frontend solution for eKYC registration, verification, and outcome flows
+- Improved test automation coverage by 30% at 99.co
+- Built internal Node.js CLI tooling, Storybook documentation, Cypress workflows, Lighthouse audit practices, and CI quality gates
 
 Open Source Contributions:
-• Delete Duplicate Rows in Excel — https://github.com/rakeshcheekatimala/delete_duplicate_rows_excel
-• Open Hangouts — https://github.com/rakeshcheekatimala/openHangouts
-• React Boilerplate — https://github.com/rakeshcheekatimala/react-boiler-plate
+- Delete Duplicate Rows in Excel - https://github.com/rakeshcheekatimala/delete_duplicate_rows_excel
+- Open Hangouts - https://github.com/rakeshcheekatimala/openHangouts
+- React Boilerplate - https://github.com/rakeshcheekatimala/react-boiler-plate
 
 Writing:
-• Writes about frontend architecture, testing, developer experience, and practical AI experiments`
+- Writes about frontend architecture, testing, developer experience, and practical AI experiments`
 
 function buildExperienceContext(): string {
   return experiences
     .map((exp) => {
       const highlights = exp.highlights.map((h) => `  - ${h}`).join('\n')
       const tags = exp.tags.join(', ')
-      return `${exp.role} at ${exp.company} (${exp.start} – ${exp.end})${exp.location ? `, ${exp.location}` : ''}
+      return `${exp.role} at ${exp.company} (${exp.start} - ${exp.end})${exp.location ? `, ${exp.location}` : ''}
 Summary: ${exp.summary}
 Highlights:
 ${highlights}
@@ -68,17 +68,20 @@ function buildProjectContext(): string {
   return mockProjects
     .map((project) => {
       const metrics = project.metrics?.map((metric) => `  - ${metric}`).join('\n') ?? '  - Not specified'
-      const highlights = project.highlights?.map((highlight) => `  - ${highlight}`).join('\n') ?? '  - Not specified'
+      const decisions = (project.approach ?? project.highlights)?.map((highlight) => `  - ${highlight}`).join('\n') ?? '  - Not specified'
       const tags = project.tags?.join(', ') ?? 'Not specified'
       return `${project.title}
 Summary: ${project.summary}
 Outcome: ${project.outcome ?? 'Not specified'}
+Problem: ${project.problem ?? 'Not specified'}
 Context: ${project.context ?? 'Not specified'}
-Role: ${project.role ?? 'Not specified'}
+Constraints: ${project.constraints ?? 'Not specified'}
+Role: ${project.roleDetails ?? project.role ?? 'Not specified'}
+Impact: ${project.impact ?? 'Not specified'}
 Metrics:
 ${metrics}
-Highlights:
-${highlights}
+Decisions:
+${decisions}
 Technologies: ${tags}`
     })
     .join('\n\n')
@@ -87,6 +90,8 @@ Technologies: ${tags}`
 const systemPrompt = `You are Rakesh Cheekatimala's personal AI assistant on his portfolio website. Your job is to answer questions about Rakesh's professional background, skills, work experience, case studies, and projects. Be concise, friendly, and professional. Speak in third person about Rakesh (e.g. "Rakesh has worked at...").
 
 When someone asks why Rakesh is valuable, connect his work to business outcomes: revenue-critical frontend systems, payments performance, eKYC architecture, testing quality, developer tooling, and team velocity.
+
+When someone asks about hiring fit, answer like a concise hiring brief: strongest fit, relevant evidence, measurable outcomes, and any limits in the available context. Prioritize verified impact and do not oversell.
 
 If asked something unrelated to Rakesh's professional background, politely redirect the conversation back to topics you can help with.
 

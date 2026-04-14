@@ -18,7 +18,7 @@ describe('Card', () => {
   it('renders a link with correct href', () => {
     render(<Card {...mockProps} />)
     
-    const link = screen.getByRole('link', { name: /read more/i })
+    const link = screen.getByRole('link', { name: /read case study/i })
     expect(link).toHaveAttribute('href', '/test-link')
   })
 

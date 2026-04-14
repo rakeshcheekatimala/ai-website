@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react'
 import AboutPage from './page'
 
-// Mock ExperienceTimeline component
-jest.mock('../../components/ExperienceTimeline', () => {
-  return function MockExperienceTimeline() {
-    return <div data-testid="experience-timeline">Experience Timeline</div>
+// Mock LocationBanner component
+jest.mock('../../components/LocationBanner', () => {
+  return function MockLocationBanner() {
+    return <div data-testid="location-banner">Location Banner</div>
   }
 })
 
@@ -25,6 +25,7 @@ describe('AboutPage', () => {
     render(<AboutPage />)
     
     expect(screen.getByText("Let's Connect")).toBeInTheDocument()
+    expect(screen.getByText(/LinkedIn is the best place to start/)).toBeInTheDocument()
   })
 
   it('renders social links', () => {
@@ -42,5 +43,12 @@ describe('AboutPage', () => {
     
     expect(screen.getByText(/My strongest work sits/)).toBeInTheDocument()
     expect(screen.getByText(/systems that hold up after launch/)).toBeInTheDocument()
+  })
+
+  it('moves the location detail to the about page', () => {
+    render(<AboutPage />)
+
+    expect(screen.getByText(/Based in Singapore/)).toBeInTheDocument()
+    expect(screen.getByTestId('location-banner')).toBeInTheDocument()
   })
 })

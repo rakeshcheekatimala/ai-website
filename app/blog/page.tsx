@@ -7,10 +7,10 @@ export default async function BlogPage() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-20">
       <div className="mb-16">
-        <h1 className="text-5xl md:text-6xl font-bold text-slate-50 mb-6">
+        <h1 className="text-5xl md:text-6xl font-bold text-ink mb-6">
           Blog
         </h1>
-        <p className="text-xl md:text-2xl text-slate-400 leading-relaxed">
+        <p className="text-xl md:text-2xl text-muted leading-relaxed">
           In-depth articles about testing, web development, and building better tools for developers.
         </p>
       </div>
@@ -19,7 +19,7 @@ export default async function BlogPage() {
         {posts.map(post => (
           <article key={post.slug}>
             <Card title={post.title} description={post.excerpt} href={`/blog/${post.slug}`} />
-            <p className="text-sm text-slate-500 mt-4">{post.date}</p>
+            <p className="text-sm text-subtle mt-4">{post.date}</p>
           </article>
         ))}
       </div>
