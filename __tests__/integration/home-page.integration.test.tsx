@@ -2,7 +2,7 @@
  * Integration test for the home page
  * Tests the full page rendering with all components working together
  */
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import Home from '../../app/page'
 
 // Mock all child components to focus on integration
@@ -58,27 +58,29 @@ describe('Home Page Integration', () => {
     render(page)
     
     // Hero section
-    expect(screen.getByText(/I build revenue critical frontend systems/i)).toBeInTheDocument()
+    expect(screen.getByText(/I build revenue-critical frontend systems/i)).toBeInTheDocument()
     expect(screen.getByText(/Rakesh Cheekatimala/)).toBeInTheDocument()
     expect(screen.getByText(/Singapore-based engineer/)).toBeInTheDocument()
     
     // CTA buttons
-    expect(screen.getByRole('link', { name: /view case studies/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /view work/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /view all case studies/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /review work history/i })).toBeInTheDocument()
+    expect(screen.getAllByRole('link', { name: /connect on linkedin/i })[0]).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /ask my agent/i })).toBeInTheDocument()
     
     // Social links
     expect(screen.getByTestId('social-links')).toBeInTheDocument()
     
-    // Location banner
-    expect(screen.getByTestId('location-banner')).toBeInTheDocument()
+    // Hiring proof sections
+    expect(screen.getByText(/What I'm hired to improve/i)).toBeInTheDocument()
+    expect(screen.getByText(/Writing signal/i)).toBeInTheDocument()
   })
 
   it('has correct external link attributes', async () => {
     const page = await Home()
     render(page)
     
-    const caseStudiesLink = screen.getByRole('link', { name: /view case studies/i })
+    const caseStudiesLink = screen.getByRole('link', { name: /view all case studies/i })
     expect(caseStudiesLink).toHaveAttribute('href', '/projects')
     expect(caseStudiesLink).not.toHaveAttribute('target')
   })
@@ -87,7 +89,7 @@ describe('Home Page Integration', () => {
     const page = await Home()
     render(page)
     
-    const workLink = screen.getByRole('link', { name: /view work/i })
+    const workLink = screen.getByRole('link', { name: /review work history/i })
     expect(workLink).toHaveAttribute('href', '/work')
     expect(workLink).not.toHaveAttribute('target')
   })
@@ -101,7 +103,7 @@ describe('Home Page Integration', () => {
     
     // Hero section should be first
     const firstSection = sections[0]
-    expect(firstSection.textContent).toContain('revenue critical')
+    expect(firstSection.textContent).toContain('revenue-critical')
     expect(firstSection.textContent).toContain('Rakesh')
   })
 })

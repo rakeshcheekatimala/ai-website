@@ -3,8 +3,23 @@ import Home from './page'
 
 // Mock dependencies
 jest.mock('../lib/mock-data', () => ({
-  getMockPosts: jest.fn().mockResolvedValue([]),
-  getMockProjects: jest.fn().mockResolvedValue([]),
+  getMockPosts: jest.fn().mockResolvedValue([
+    {
+      title: 'Testing Patterns',
+      slug: 'testing-patterns',
+      excerpt: 'Practical testing notes',
+      date: '2025-01-01',
+    },
+  ]),
+  getMockProjects: jest.fn().mockResolvedValue([
+    {
+      title: 'Payments Performance Modernization',
+      slug: 'payments-performance-modernization',
+      summary: 'Refactored a payments experience',
+      outcome: 'Reduced bundle size by 60%',
+      impact: 'Reduced bundle size by 60% and supported checkout performance.',
+    },
+  ]),
 }))
 
 jest.mock('../components/Card', () => {
@@ -36,7 +51,7 @@ describe('Home', () => {
     const page = await Home()
     render(page)
     
-    expect(screen.getByText(/I build revenue critical frontend systems/i)).toBeInTheDocument()
+    expect(screen.getByText(/I build revenue-critical frontend systems/i)).toBeInTheDocument()
     expect(screen.getByText(/Rakesh Cheekatimala/)).toBeInTheDocument()
   })
 
@@ -59,11 +74,19 @@ describe('Home', () => {
     const page = await Home()
     render(page)
     
-    const caseStudiesLink = screen.getByRole('link', { name: /view case studies/i })
+    const caseStudiesLink = screen.getByRole('link', { name: /view all case studies/i })
     expect(caseStudiesLink).toHaveAttribute('href', '/projects')
     
-    const workLink = screen.getByRole('link', { name: /view work/i })
+    const workLink = screen.getByRole('link', { name: /review work history/i })
     expect(workLink).toHaveAttribute('href', '/work')
+  })
+
+  it('renders the primary LinkedIn hiring CTA', async () => {
+    const page = await Home()
+    render(page)
+
+    const linkedInLinks = screen.getAllByRole('link', { name: /connect on linkedin/i })
+    expect(linkedInLinks[0]).toHaveAttribute('href', 'https://www.linkedin.com/in/rakesh-cheekatimala/')
   })
 
   it('renders proof points', async () => {
@@ -81,10 +104,12 @@ describe('Home', () => {
     expect(screen.getByTestId('social-links')).toBeInTheDocument()
   })
 
-  it('renders location banner component', async () => {
+  it('renders the hiring value pillars and writing signal', async () => {
     const page = await Home()
     render(page)
     
-    expect(screen.getByTestId('location-banner')).toBeInTheDocument()
+    expect(screen.getByText(/What I'm hired to improve/i)).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Revenue-critical frontend' })).toBeInTheDocument()
+    expect(screen.getByText(/Writing signal/i)).toBeInTheDocument()
   })
 })

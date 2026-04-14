@@ -11,31 +11,31 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-40 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
-      <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+    <header className="sticky top-0 z-40 border-b border-line bg-white/85 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
           <Image
             src="/images/profilepic.jpeg"
-            alt="Profile Picture"
+            alt="Rakesh Cheekatimala"
             width={50}
             height={50}
             className="rounded-lg"
           />
-          <span className="text-2xl font-bold text-slate-50">Rakesh</span>
+          <span className="text-2xl font-bold text-ink">Rakesh</span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8 items-center text-lg">
-          <Link href="/blog" className="text-slate-400 hover:text-teal-300 transition" onClick={handleNavClick}>
+          <Link href="/blog" className="text-muted hover:text-accent transition" onClick={handleNavClick}>
             Blog
           </Link>
-          <Link href="/work" className="text-slate-400 hover:text-teal-300 transition" onClick={handleNavClick}>
+          <Link href="/work" className="text-muted hover:text-accent transition" onClick={handleNavClick}>
             Work
           </Link>
-          <Link href="/projects" className="text-slate-400 hover:text-teal-300 transition" onClick={handleNavClick}>
+          <Link href="/projects" className="text-muted hover:text-accent transition" onClick={handleNavClick}>
             Case Studies
           </Link>
-          <Link href="/about" className="text-slate-400 hover:text-teal-300 transition" onClick={handleNavClick}>
+          <Link href="/about" className="text-muted hover:text-accent transition" onClick={handleNavClick}>
             About
           </Link>
         </nav>
@@ -44,7 +44,7 @@ export default function Header() {
         <div className="flex md:hidden gap-3 items-center">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-slate-400 hover:text-teal-300 transition p-2 rounded-lg hover:bg-slate-800 duration-200"
+            className="text-muted hover:text-accent transition p-2 rounded-lg hover:bg-accent-soft duration-200"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -63,18 +63,18 @@ export default function Header() {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <nav className="md:hidden border-t border-slate-800 bg-slate-900/90 backdrop-blur-sm">
+        <nav className="md:hidden border-t border-line bg-white/95 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
-            <Link href="/blog" className="text-slate-400 hover:text-teal-300 transition py-2" onClick={handleNavClick}>
+            <Link href="/blog" className="text-muted hover:text-accent transition py-2" onClick={handleNavClick}>
               Blog
             </Link>
-            <Link href="/work" className="text-slate-400 hover:text-teal-300 transition py-2" onClick={handleNavClick}>
+            <Link href="/work" className="text-muted hover:text-accent transition py-2" onClick={handleNavClick}>
               Work
             </Link>
-            <Link href="/projects" className="text-slate-400 hover:text-teal-300 transition py-2" onClick={handleNavClick}>
+            <Link href="/projects" className="text-muted hover:text-accent transition py-2" onClick={handleNavClick}>
               Case Studies
             </Link>
-            <Link href="/about" className="text-slate-400 hover:text-teal-300 transition py-2" onClick={handleNavClick}>
+            <Link href="/about" className="text-muted hover:text-accent transition py-2" onClick={handleNavClick}>
               About
             </Link>
           </div>

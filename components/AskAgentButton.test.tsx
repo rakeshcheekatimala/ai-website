@@ -19,9 +19,9 @@ describe('AskAgentButton', () => {
     expect(screen.getByRole('button', { name: /ask my agent/i })).toBeInTheDocument()
   })
 
-  it('explains what the agent does', () => {
+  it('keeps the button focused without helper copy', () => {
     render(<AskAgentButton />)
-    expect(screen.getByText(/AI trained on my work and experience/i)).toBeInTheDocument()
+    expect(screen.queryByText(/hiring-focused summary/i)).not.toBeInTheDocument()
   })
 
   it('opens ChatModal when clicked', () => {
