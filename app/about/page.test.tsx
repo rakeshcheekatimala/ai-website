@@ -31,11 +31,25 @@ describe('AboutPage', () => {
   it('renders social links', () => {
     render(<AboutPage />)
     
-    const linkedinLink = screen.getByRole('link', { name: /linkedin/i })
+    const linkedinLink = screen.getByRole('link', { name: /^linkedin$/i })
     expect(linkedinLink).toHaveAttribute('href', 'https://www.linkedin.com/in/rakesh-cheekatimala/')
     
     const githubLink = screen.getByRole('link', { name: /github/i })
     expect(githubLink).toHaveAttribute('href', 'https://github.com/rakeshcheekatimala')
+  })
+
+  it('renders certifications with LinkedIn verification link', () => {
+    render(<AboutPage />)
+
+    expect(screen.getByText('Certifications')).toBeInTheDocument()
+    expect(screen.getByText('Architecting Agentic AI Solutions')).toBeInTheDocument()
+    expect(screen.getByText('Deploying and Operating AI Solutions - LLMOps')).toBeInTheDocument()
+    expect(screen.getByText('AWS Certified AI Practitioner')).toBeInTheDocument()
+    expect(screen.getByText('AWS Certified Solutions Architect - Associate')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /verify on linkedin/i })).toHaveAttribute(
+      'href',
+      'https://sg.linkedin.com/in/rakesh-cheekatimala?trk=public_post_feed-actor-name'
+    )
   })
 
   it('renders all paragraphs', () => {
