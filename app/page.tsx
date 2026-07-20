@@ -92,7 +92,7 @@ export default async function Home() {
         <div className="rounded-lg bg-white px-8 py-10 md:px-10">
           <p className="text-sm font-semibold uppercase text-accent-light">For hiring teams</p>
           <h2 className="mt-3 max-w-3xl text-3xl font-bold text-white md:text-4xl">
-            Looking for a senior frontend engineer who can connect platform quality to business outcomes?
+            Looking for a senior engineer who can connect platform quality to business outcomes?
           </h2>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link
