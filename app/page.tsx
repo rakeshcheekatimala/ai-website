@@ -39,7 +39,7 @@ export default async function Home() {
               Senior Frontend Platform Engineer
             </p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-ink max-w-5xl">
-              I build revenue-critical frontend systems that teams can trust.
+              I build revenue critical systems that customers can trust.
             </h1>
             <p className="text-xl md:text-2xl text-graphite leading-relaxed max-w-3xl">
               I&apos;m Rakesh Cheekatimala, a Singapore-based engineer with 10+ years across payments, eKYC, property, commerce, and enterprise platforms. I focus on performance, clean architecture, reliable tests, and developer tooling that helps teams ship with confidence.
