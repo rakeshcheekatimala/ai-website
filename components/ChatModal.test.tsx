@@ -43,7 +43,7 @@ describe('ChatModal', () => {
   it('renders starter questions when no messages', () => {
     render(<ChatModal onClose={mockOnClose} />)
     
-    expect(screen.getByText("Summarize Rakesh's frontend platform impact")).toBeInTheDocument()
+    expect(screen.getByText("Summarize Rakesh's platform impact")).toBeInTheDocument()
     expect(screen.getByText('Which teams would Rakesh fit best?')).toBeInTheDocument()
     expect(screen.getByText('Show his payments and eKYC proof')).toBeInTheDocument()
     expect(screen.getByText('What delivery risks can he reduce?')).toBeInTheDocument()
@@ -52,10 +52,10 @@ describe('ChatModal', () => {
   it('sends message when starter question is clicked', () => {
     render(<ChatModal onClose={mockOnClose} />)
     
-    const starterButton = screen.getByText("Summarize Rakesh's frontend platform impact")
+    const starterButton = screen.getByText("Summarize Rakesh's platform impact")
     fireEvent.click(starterButton)
     
-    expect(mockSendMessage).toHaveBeenCalledWith({ text: "Summarize Rakesh's frontend platform impact" })
+    expect(mockSendMessage).toHaveBeenCalledWith({ text: "Summarize Rakesh's platform impact" })
   })
 
   it('closes modal when close button is clicked', () => {

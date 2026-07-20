@@ -36,7 +36,7 @@ export default async function Home() {
         <div className="grid gap-12">
           <div className="space-y-7">
             <p className="text-sm md:text-base font-semibold uppercase text-accent">
-              Senior Frontend Platform Engineer
+              Senior Software Engineer — Platforms & Applied AI
             </p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-ink max-w-5xl">
               I build revenue critical systems that customers can trust.

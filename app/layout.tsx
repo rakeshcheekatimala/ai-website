@@ -4,8 +4,8 @@ import Header from '@components/Header'
 import Footer from '@components/Footer'
 
 export const metadata = {
-  title: 'Rakesh Cheekatimala - Senior Frontend Platform Engineer',
-  description: 'Senior frontend engineer in Singapore building performance-focused web platforms, payments flows, eKYC systems, and developer tooling.',
+  title: 'Rakesh Cheekatimala - Senior Software Engineer — Platforms & Applied AI',
+  description: 'Senior software engineer in Singapore building performance-focused web platforms, payments flows, eKYC systems, and developer tooling.',
   icons: {
     icon: '/images/profilepic.jpeg',
   },

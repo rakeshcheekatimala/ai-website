@@ -27,7 +27,7 @@ function isRateLimited(ip: string): boolean {
   return false
 }
 
-const summaryText = `Rakesh Cheekatimala is a Singapore-based Senior Frontend Platform Engineer with 10+ years of experience across payments, eKYC, property, e-commerce, enterprise platforms, and developer tooling.
+const summaryText = `Rakesh Cheekatimala is a Singapore-based Senior Software Engineer — Platforms & Applied AI  with 10+ years of experience across payments, eKYC, property, e-commerce, enterprise platforms, and developer tooling.
 
 Positioning:
 - Builds revenue-critical frontend systems that teams can trust

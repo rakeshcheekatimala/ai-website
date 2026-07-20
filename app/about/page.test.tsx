@@ -18,7 +18,7 @@ describe('AboutPage', () => {
   it('renders the introduction text', () => {
     render(<AboutPage />)
     
-    expect(screen.getByText(/senior frontend platform engineer/)).toBeInTheDocument()
+    expect(screen.getByText(/Senior Software Engineer — Frontend Platforms & Applied AI/)).toBeInTheDocument()
   })
 
   it('renders the connect section', () => {

@@ -32,7 +32,7 @@ export default function About() {
       
       <div className="space-y-8 text-lg text-muted leading-relaxed">
         <p>
-          I&apos;m a senior frontend platform engineer based in Singapore. Over the last 10+ years, I&apos;ve worked across payments, eKYC, property, e-commerce, enterprise platforms, and developer tooling.
+          I&apos;m a senior platform engineer based in Singapore. Over the last 10+ years, I&apos;ve worked across payments, eKYC, property, e-commerce, enterprise platforms, and developer tooling.
         </p>
         
         <p>
