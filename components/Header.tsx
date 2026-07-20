@@ -26,9 +26,7 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8 items-center text-lg">
-          <Link href="/blog" className="text-muted hover:text-accent transition" onClick={handleNavClick}>
-            Blog
-          </Link>
+         
           <Link href="/work" className="text-muted hover:text-accent transition" onClick={handleNavClick}>
             Work
           </Link>
@@ -65,9 +63,7 @@ export default function Header() {
       {isMenuOpen && (
         <nav className="md:hidden border-t border-line bg-white/95 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
-            <Link href="/blog" className="text-muted hover:text-accent transition py-2" onClick={handleNavClick}>
-              Blog
-            </Link>
+           
             <Link href="/work" className="text-muted hover:text-accent transition py-2" onClick={handleNavClick}>
               Work
             </Link>

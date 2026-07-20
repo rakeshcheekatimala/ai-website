@@ -11,10 +11,7 @@ describe('Header', () => {
 
   it('renders desktop navigation links', () => {
     render(<Header />)
-    
-    const blogLink = screen.getAllByRole('link', { name: /blog/i })[0]
-    expect(blogLink).toHaveAttribute('href', '/blog')
-    
+      
     const workLink = screen.getAllByRole('link', { name: /work/i })[0]
     expect(workLink).toHaveAttribute('href', '/work')
 

@@ -7,7 +7,6 @@ export default function Footer() {
             <h4 className="font-bold text-ink mb-4">Site</h4>
             <ul className="space-y-2 text-muted">
               <li><a href="/" className="hover:text-accent transition">Home</a></li>
-              <li><a href="/blog" className="hover:text-accent transition">Blog</a></li>
               <li><a href="/work" className="hover:text-accent transition">Work</a></li>
               <li><a href="/projects" className="hover:text-accent transition">Case Studies</a></li>
               <li><a href="/about" className="hover:text-accent transition">About</a></li>

@@ -88,59 +88,6 @@ export default async function Home() {
         </div>
       </section>
 
-      {projects.length > 0 && (
-        <section className="max-w-6xl mx-auto px-6 py-16">
-          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase text-accent">Selected proof</p>
-              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-ink">Case studies that connect engineering decisions to business outcomes.</h2>
-            </div>
-            <Link
-              href="/projects"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-line bg-white px-5 py-3 text-center font-semibold text-ink transition hover:border-accent/40 hover:text-accent"
-            >
-              View all case studies
-            </Link>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {projects.map((project) => (
-              <Link
-                key={project.slug}
-                href={`/projects/${project.slug}`}
-                className="group rounded-lg border border-line bg-paper p-6 shadow-card transition hover:-translate-y-1 hover:border-accent/40 hover:shadow-card-hover"
-              >
-                <p className="text-sm font-semibold text-accent">{project.outcome}</p>
-                <h3 className="mt-4 text-2xl font-bold text-ink transition group-hover:text-accent">{project.title}</h3>
-                <p className="mt-3 text-base text-muted leading-relaxed">{project.impact ?? project.summary}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {posts.length > 0 && (
-        <section className="max-w-6xl mx-auto px-6 py-16">
-          <div className="grid gap-8 rounded-lg border border-line bg-white p-8 shadow-card md:grid-cols-[0.9fr_1.1fr] md:p-10">
-            <div>
-              <p className="text-sm font-semibold uppercase text-accent">Writing signal</p>
-              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-ink">How I think about frontend systems.</h2>
-              <p className="mt-4 text-lg leading-relaxed text-muted">
-                Notes on architecture, testing, AI experiments, and developer experience, written to make engineering tradeoffs easier to reason about.
-              </p>
-            </div>
-            <div className="space-y-5">
-              {posts.slice(0, 3).map((post) => (
-                <Link key={post.slug} href={`/blog/${post.slug}`} className="block border-b border-line pb-5 last:border-b-0 last:pb-0">
-                  <p className="text-sm text-subtle">{post.date}</p>
-                  <h3 className="mt-1 text-xl font-bold text-ink transition hover:text-accent">{post.title}</h3>
-                  <p className="mt-2 text-base leading-relaxed text-muted">{post.excerpt}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       <section className="max-w-6xl mx-auto px-6 py-16">
         <div className="rounded-lg bg-white px-8 py-10 md:px-10">
           <p className="text-sm font-semibold uppercase text-accent-light">For hiring teams</p>
