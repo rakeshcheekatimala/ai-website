@@ -1,21 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #111316;
-  --color-graphite: #2A3038;
-  --color-muted: #667080;
-  --color-subtle: #98A2B3;
-  --color-paper: #FFFFFF;
-  --color-wash: #F4F0E8;
-  --color-line: #DED8CC;
-  --color-accent: #0E7490;
-  --color-accent-light: #22D3EE;
-  --color-accent-dim: #155E75;
-  --color-accent-soft: #D8F3F7;
-  --shadow-glow: 0 18px 42px rgba(14, 116, 144, 0.18);
-  --shadow-glow-sm: 0 10px 22px rgba(14, 116, 144, 0.12);
-  --shadow-card: 0 24px 70px rgba(17, 19, 22, 0.08);
-  --shadow-card-hover: 0 32px 80px rgba(17, 19, 22, 0.14);
+  --color-ink: #F4F4F5;
+  --color-graphite: #D4D4D8;
+  --color-muted: #A1A1AA;
+  --color-subtle: #71717A;
+  --color-paper: #12151A;
+  --color-wash: #0B0D10;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-accent: #8B5CF6;
+  --color-accent-light: #A78BFA;
+  --color-accent-dim: #7C3AED;
+  --color-accent-soft: rgba(139, 92, 246, 0.14);
+  --shadow-glow: 0 18px 46px rgba(139, 92, 246, 0.24);
+  --shadow-glow-sm: 0 10px 26px rgba(139, 92, 246, 0.18);
+  --shadow-card: 0 24px 70px rgba(0, 0, 0, 0.22);
+  --shadow-card-hover: 0 34px 90px rgba(0, 0, 0, 0.34), 0 0 38px rgba(139, 92, 246, 0.12);
+  --radius-md: 0.75rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1rem;
 }
 
 html {
@@ -24,36 +27,37 @@ html {
 
 body {
   background:
-    linear-gradient(rgba(17, 19, 22, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17, 19, 22, 0.035) 1px, transparent 1px),
-    #F4F0E8;
+    radial-gradient(circle at 18% 12%, rgba(139, 92, 246, 0.075), transparent 28rem),
+    radial-gradient(circle at 82% 8%, rgba(167, 139, 250, 0.035), transparent 24rem),
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    #0B0D10;
   background-size: 56px 56px;
-  color: #2B2F36;
+  color: #A1A1AA;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: Geist, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 h1 {
   @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
-  color: inherit;
   letter-spacing: 0;
+  font-family: Geist, Manrope, "Space Grotesk", Inter, sans-serif;
 }
 
 h2 {
   @apply text-3xl md:text-4xl font-bold leading-tight;
-  color: inherit;
+  font-family: Geist, Manrope, "Space Grotesk", Inter, sans-serif;
 }
 
 h3 {
   @apply text-2xl md:text-3xl font-bold;
-  color: inherit;
+  font-family: Geist, Manrope, "Space Grotesk", Inter, sans-serif;
 }
 
 p {
   @apply leading-relaxed text-lg;
-  color: inherit;
 }
 
 /* Links */
@@ -65,20 +69,20 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid rgba(34, 211, 238, 0.45);
+  outline: 3px solid rgba(139, 92, 246, 0.48);
   outline-offset: 4px;
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.3);
-  color: #111316;
+  background: rgba(139, 92, 246, 0.42);
+  color: #F4F4F5;
 }
 
 .surface-grid {
   background:
-    linear-gradient(rgba(17, 19, 22, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17, 19, 22, 0.05) 1px, transparent 1px),
-    rgba(255, 255, 255, 0.72);
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    rgba(18, 21, 26, 0.82);
   background-size: 32px 32px;
 }
 
@@ -131,5 +135,5 @@ button:focus-visible {
 
 .subscribe {
   @apply leading-relaxed text-lg;
-  color: #0F766E;
+  color: #A78BFA;
 }

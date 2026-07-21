@@ -141,20 +141,20 @@ export default function LocationBanner() {
         type: 'line',
         source: 'arc',
         paint: {
-          'line-color': '#ef4444',
+          'line-color': '#8B5CF6',
           'line-width': 6,
           'line-blur': 8,
           'line-opacity': 0.35,
         },
       })
 
-      // Main dashed red line
+      // Main dashed line
       map.current.addLayer({
         id: 'arc-dash',
         type: 'line',
         source: 'arc',
         paint: {
-          'line-color': '#ef4444',
+          'line-color': '#A78BFA',
           'line-width': 2,
           'line-dasharray': [5, 4],
         },

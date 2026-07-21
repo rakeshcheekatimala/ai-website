@@ -67,7 +67,7 @@ export default function ChatModal({ onClose }: ChatModalProps) {
       onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
     >
       <div
-        className="relative w-full max-w-2xl h-[85vh] flex flex-col overflow-hidden rounded-lg border border-line bg-white shadow-card-hover"
+        className="relative w-full max-w-2xl h-[85vh] flex flex-col overflow-hidden rounded-lg border border-line bg-paper shadow-card-hover"
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-line">
@@ -168,13 +168,13 @@ export default function ChatModal({ onClose }: ChatModalProps) {
               onKeyDown={handleKeyPress}
               placeholder="Ask about Rakesh's fit, impact, or case studies..."
               rows={1}
-              className="flex-1 resize-none rounded-lg border border-line bg-white px-4 py-3 text-sm text-graphite placeholder-subtle transition-all focus:border-accent/60 focus:outline-none focus:ring-1 focus:ring-accent/30"
+              className="flex-1 resize-none rounded-lg border border-line bg-wash px-4 py-3 text-sm text-graphite placeholder-subtle transition-all focus:border-accent/60 focus:outline-none focus:ring-1 focus:ring-accent/30"
               style={{ maxHeight: '120px' }}
             />
             {isLoading ? (
               <button
                 onClick={stop}
-                className="flex-shrink-0 w-10 h-10 rounded-lg bg-graphite hover:bg-ink transition-all flex items-center justify-center"
+                className="flex-shrink-0 w-10 h-10 rounded-lg border border-line bg-wash hover:bg-accent-soft transition-all flex items-center justify-center"
                 aria-label="Stop generation"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-white">

@@ -261,24 +261,25 @@ All summaries, highlights, and tags for those roles remain in experiences/index.
 
 Typography:
 
-- Display: system sans-serif, heavy weight, tight tracking, controlled line-height.
-- Body: system sans-serif, regular/medium weights, comfortable line-height.
+- Display: Geist, Manrope, Space Grotesk or system fallback; heavy weight, tight hierarchy, controlled line-height.
+- Body: Geist, Inter or system fallback; regular/medium weights, comfortable line-height.
 - Metadata: uppercase labels using existing text only; no excessive monospace.
 
 Color:
 
-- Neutral foundation: #F4F0E8 wash and #111316 ink.
-- Primary accent: #0E7490.
-- Supporting accent: #22D3EE.
-- Surface: #FFFFFF.
-- Line: #DED8CC.
+- Neutral foundation: #0B0D10 graphite black.
+- Elevated surface: #12151A.
+- Primary text: #F4F4F5.
+- Secondary text: #A1A1AA.
+- Primary accent: #8B5CF6 electric violet.
+- Line: rgba(255, 255, 255, 0.08).
 
 Spacing and layout:
 
 - Max page width: 80rem where broad scanning is useful.
 - Reading width: approximately 48-64rem for paragraphs and detail content.
 - Section spacing: 4rem desktop rhythm, tighter on mobile.
-- Cards: 8px radius, thin border, soft shadow.
+- Cards: controlled 12px-16px radius, thin border, soft depth.
 - Grid: responsive two/three-column layouts with single-column mobile collapse.
 
 Components:

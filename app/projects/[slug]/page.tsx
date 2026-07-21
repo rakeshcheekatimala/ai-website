@@ -72,11 +72,11 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
         <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
           {project.metrics?.length ? (
-            <section className="rounded-lg border border-line bg-ink p-6 text-white shadow-card">
-              <h2 className="text-xl font-bold text-white mb-4">Evidence</h2>
+            <section className="rounded-lg border border-line bg-paper p-6 shadow-card">
+              <h2 className="text-xl font-bold text-ink mb-4">Evidence</h2>
               <ul className="space-y-4">
                 {project.metrics.map((metric) => (
-                  <li key={metric} className="rounded-lg border border-white/10 bg-white/5 p-3 text-line">{metric}</li>
+                  <li key={metric} className="rounded-lg border border-line bg-wash/70 p-3 text-muted">{metric}</li>
                 ))}
               </ul>
             </section>
@@ -105,7 +105,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </Link>
           ) : null}
           {project.repoUrl ? (
-            <Link href={project.repoUrl} className="rounded-lg border border-line bg-white px-6 py-3 text-center font-semibold text-ink transition hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent">
+            <Link href={project.repoUrl} className="rounded-lg border border-line bg-paper px-6 py-3 text-center font-semibold text-ink transition hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent">
               GitHub
             </Link>
           ) : null}

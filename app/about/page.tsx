@@ -57,7 +57,7 @@ export default function About() {
               href="https://sg.linkedin.com/in/rakesh-cheekatimala?trk=public_post_feed-actor-name"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center justify-center rounded-lg border border-line bg-white px-4 py-2 text-center text-base font-semibold text-ink transition hover:border-accent/40 hover:text-accent"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg border border-line bg-wash px-4 py-2 text-center text-base font-semibold text-ink transition hover:border-accent/40 hover:text-accent"
             >
               Verify on LinkedIn
             </a>
@@ -79,18 +79,18 @@ export default function About() {
           </div>
         </section>
 
-        <div className="rounded-lg border border-line bg-ink p-6 shadow-card md:p-8">
-          <h2 className="text-3xl font-bold text-white mb-4">
+        <div className="rounded-lg border border-line bg-paper p-6 shadow-card md:p-8">
+          <h2 className="text-3xl font-bold text-ink mb-4">
             Let&apos;s Connect
           </h2>
-          <p className="mb-6 text-line">
+          <p className="mb-6 text-muted">
             Interested in senior frontend platform work, architecture, payments, eKYC, or developer tooling? LinkedIn is the best place to start.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <a href="https://www.linkedin.com/in/rakesh-cheekatimala/" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-accent px-6 py-3 text-center font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent-dim">
               LinkedIn
             </a>
-            <a href="https://github.com/rakeshcheekatimala" target="_blank" rel="noopener noreferrer" className="rounded-lg border border-white/20 px-6 py-3 text-center font-semibold text-white transition hover:-translate-y-0.5 hover:border-accent-light hover:text-accent-light">
+            <a href="https://github.com/rakeshcheekatimala" target="_blank" rel="noopener noreferrer" className="rounded-lg border border-line bg-wash px-6 py-3 text-center font-semibold text-ink transition hover:-translate-y-0.5 hover:border-accent-light hover:text-accent-light">
               GitHub
             </a>
           </div>

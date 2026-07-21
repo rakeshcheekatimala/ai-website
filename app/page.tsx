@@ -132,7 +132,7 @@ export default async function Home() {
             </Link>
             <Link
               href="/work"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-line bg-white px-5 py-3 text-center font-semibold text-ink transition hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent sm:w-auto"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-line bg-paper px-5 py-3 text-center font-semibold text-ink transition hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent sm:w-auto"
             >
               Review work history
             </Link>
