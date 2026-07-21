@@ -47,7 +47,7 @@ export default async function Home() {
                 href="https://www.linkedin.com/in/rakesh-cheekatimala/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-accent px-5 py-3 text-center font-semibold text-white transition hover:bg-accent-dim hover:shadow-glow sm:w-auto"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-accent px-5 py-3 text-center font-semibold text-accent-contrast transition hover:bg-accent-dim hover:shadow-glow sm:w-auto"
               >
                 Connect on LinkedIn
               </Link>
@@ -126,7 +126,7 @@ export default async function Home() {
               href="https://www.linkedin.com/in/rakesh-cheekatimala/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-accent px-5 py-3 text-center font-semibold text-white transition hover:bg-accent-dim hover:shadow-glow sm:w-auto"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-accent px-5 py-3 text-center font-semibold text-accent-contrast transition hover:bg-accent-dim hover:shadow-glow sm:w-auto"
             >
               Connect on LinkedIn
             </Link>

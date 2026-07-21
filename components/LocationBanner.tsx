@@ -141,7 +141,7 @@ export default function LocationBanner() {
         type: 'line',
         source: 'arc',
         paint: {
-          'line-color': '#8B5CF6',
+          'line-color': '#ff8435',
           'line-width': 6,
           'line-blur': 8,
           'line-opacity': 0.35,
@@ -154,7 +154,7 @@ export default function LocationBanner() {
         type: 'line',
         source: 'arc',
         paint: {
-          'line-color': '#A78BFA',
+          'line-color': '#ff9e73',
           'line-width': 2,
           'line-dasharray': [5, 4],
         },

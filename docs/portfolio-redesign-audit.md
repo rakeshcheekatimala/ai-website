@@ -267,12 +267,13 @@ Typography:
 
 Color:
 
-- Neutral foundation: #0B0D10 graphite black.
-- Elevated surface: #12151A.
+- Neutral foundation: #0A0403 from the Burnt Sienna theme.
+- Elevated surface: #150A06.
 - Primary text: #F4F4F5.
-- Secondary text: #A1A1AA.
-- Primary accent: #8B5CF6 electric violet.
-- Line: rgba(255, 255, 255, 0.08).
+- Secondary text: #C49B84.
+- Primary accent: #FF8435.
+- Supporting accent: #FF9E73.
+- Line: #2E201A.
 
 Spacing and layout:
 

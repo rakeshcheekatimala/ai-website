@@ -1,24 +1,61 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #F4F4F5;
-  --color-graphite: #D4D4D8;
-  --color-muted: #A1A1AA;
-  --color-subtle: #71717A;
-  --color-paper: #12151A;
-  --color-wash: #0B0D10;
-  --color-line: rgba(255, 255, 255, 0.08);
-  --color-accent: #8B5CF6;
-  --color-accent-light: #A78BFA;
-  --color-accent-dim: #7C3AED;
-  --color-accent-soft: rgba(139, 92, 246, 0.14);
-  --shadow-glow: 0 18px 46px rgba(139, 92, 246, 0.24);
-  --shadow-glow-sm: 0 10px 26px rgba(139, 92, 246, 0.18);
-  --shadow-card: 0 24px 70px rgba(0, 0, 0, 0.22);
-  --shadow-card-hover: 0 34px 90px rgba(0, 0, 0, 0.34), 0 0 38px rgba(139, 92, 246, 0.12);
-  --radius-md: 0.75rem;
-  --radius-lg: 0.875rem;
+  --color-ink: #2B130A;
+  --color-graphite: #5C321E;
+  --color-muted: #7A5540;
+  --color-subtle: #9F7660;
+  --color-paper: #FFF2E8;
+  --color-wash: #FFF8F3;
+  --color-line: #E9CDBB;
+  --color-accent: #C65A1E;
+  --color-accent-light: #FF8435;
+  --color-accent-dim: #9F3B12;
+  --color-accent-soft: #F8DDCB;
+  --color-accent-contrast: #FFF8F3;
+  --shadow-glow: 0 18px 46px rgba(198, 90, 30, 0.18);
+  --shadow-glow-sm: 0 10px 26px rgba(198, 90, 30, 0.14);
+  --shadow-card: 0 24px 70px rgba(76, 35, 14, 0.1);
+  --shadow-card-hover: 0 34px 90px rgba(76, 35, 14, 0.16), 0 0 38px rgba(198, 90, 30, 0.08);
+  --radius-md: 0.875rem;
+  --radius-lg: 1rem;
   --radius-xl: 1rem;
+}
+
+:root {
+  color-scheme: light;
+  --modal-backdrop: rgba(76, 35, 14, 0.18);
+  --bg-glow-primary: 0.03;
+  --bg-glow-secondary: 0.018;
+  --bg-grid-opacity: 0.02;
+  --surface-grid-opacity: 0.03;
+  --surface-grid-fill: 88%;
+}
+
+.dark {
+  color-scheme: dark;
+  --modal-backdrop: rgba(0, 0, 0, 0.58);
+  --color-ink: #F4F4F5;
+  --color-graphite: #F7D6C0;
+  --color-muted: #C49B84;
+  --color-subtle: #8F6F5E;
+  --color-paper: #150A06;
+  --color-wash: #0A0403;
+  --color-line: #2E201A;
+  --color-accent: #FF8435;
+  --color-accent-light: #FF9E73;
+  --color-accent-dim: #DA6946;
+  --color-accent-soft: #3C2117;
+  --color-accent-contrast: #0A0403;
+  --shadow-glow: 0 18px 46px rgba(255, 132, 53, 0.24);
+  --shadow-glow-sm: 0 10px 26px rgba(255, 132, 53, 0.18);
+  --shadow-card: 0 24px 70px rgba(0, 0, 0, 0.22);
+  --shadow-card-hover: 0 34px 90px rgba(0, 0, 0, 0.34), 0 0 38px rgba(255, 132, 53, 0.12);
+  --bg-glow-primary: 0.035;
+  --bg-glow-secondary: 0.018;
+  --bg-grid-opacity: 0.012;
+  --surface-grid-opacity: 0.018;
+  --surface-grid-fill: 88%;
 }
 
 html {
@@ -27,33 +64,33 @@ html {
 
 body {
   background:
-    radial-gradient(circle at 18% 12%, rgba(139, 92, 246, 0.075), transparent 28rem),
-    radial-gradient(circle at 82% 8%, rgba(167, 139, 250, 0.035), transparent 24rem),
-    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-    #0B0D10;
+    radial-gradient(circle at 16% 8%, rgba(255, 132, 53, var(--bg-glow-primary)), transparent 30rem),
+    radial-gradient(circle at 78% 6%, rgba(218, 105, 70, var(--bg-glow-secondary)), transparent 28rem),
+    linear-gradient(rgba(255, 132, 53, var(--bg-grid-opacity)) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 132, 53, var(--bg-grid-opacity)) 1px, transparent 1px),
+    var(--color-wash);
   background-size: 56px 56px;
-  color: #A1A1AA;
+  color: var(--color-muted);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  font-family: Geist, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: Outfit, Geist, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 h1 {
   @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
   letter-spacing: 0;
-  font-family: Geist, Manrope, "Space Grotesk", Inter, sans-serif;
+  font-family: Outfit, Geist, Manrope, "Space Grotesk", Inter, sans-serif;
 }
 
 h2 {
   @apply text-3xl md:text-4xl font-bold leading-tight;
-  font-family: Geist, Manrope, "Space Grotesk", Inter, sans-serif;
+  font-family: Outfit, Geist, Manrope, "Space Grotesk", Inter, sans-serif;
 }
 
 h3 {
   @apply text-2xl md:text-3xl font-bold;
-  font-family: Geist, Manrope, "Space Grotesk", Inter, sans-serif;
+  font-family: Outfit, Geist, Manrope, "Space Grotesk", Inter, sans-serif;
 }
 
 p {
@@ -69,20 +106,20 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid rgba(139, 92, 246, 0.48);
+  outline: 3px solid color-mix(in srgb, var(--color-accent) 48%, transparent);
   outline-offset: 4px;
 }
 
 ::selection {
-  background: rgba(139, 92, 246, 0.42);
-  color: #F4F4F5;
+  background: color-mix(in srgb, var(--color-accent) 42%, transparent);
+  color: var(--color-ink);
 }
 
 .surface-grid {
   background:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    rgba(18, 21, 26, 0.82);
+    linear-gradient(rgba(255, 132, 53, var(--surface-grid-opacity)) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 132, 53, var(--surface-grid-opacity)) 1px, transparent 1px),
+    color-mix(in srgb, var(--color-paper) var(--surface-grid-fill), transparent);
   background-size: 32px 32px;
 }
 
@@ -135,5 +172,5 @@ button:focus-visible {
 
 .subscribe {
   @apply leading-relaxed text-lg;
-  color: #A78BFA;
+  color: var(--color-accent-light);
 }

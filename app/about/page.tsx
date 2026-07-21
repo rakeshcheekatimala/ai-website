@@ -87,7 +87,7 @@ export default function About() {
             Interested in senior frontend platform work, architecture, payments, eKYC, or developer tooling? LinkedIn is the best place to start.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <a href="https://www.linkedin.com/in/rakesh-cheekatimala/" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-accent px-6 py-3 text-center font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent-dim">
+            <a href="https://www.linkedin.com/in/rakesh-cheekatimala/" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-accent px-6 py-3 text-center font-semibold text-accent-contrast transition hover:-translate-y-0.5 hover:bg-accent-dim">
               LinkedIn
             </a>
             <a href="https://github.com/rakeshcheekatimala" target="_blank" rel="noopener noreferrer" className="rounded-lg border border-line bg-wash px-6 py-3 text-center font-semibold text-ink transition hover:-translate-y-0.5 hover:border-accent-light hover:text-accent-light">

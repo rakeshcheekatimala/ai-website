@@ -100,7 +100,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       {hasActions ? (
         <div className="mt-12 pt-8 border-t border-line flex flex-col sm:flex-row gap-4">
           {project.url ? (
-            <Link href={project.url} className="rounded-lg bg-accent px-6 py-3 text-center font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent-dim hover:shadow-glow-sm">
+            <Link href={project.url} className="rounded-lg bg-accent px-6 py-3 text-center font-semibold text-accent-contrast transition hover:-translate-y-0.5 hover:bg-accent-dim hover:shadow-glow-sm">
               View Project
             </Link>
           ) : null}

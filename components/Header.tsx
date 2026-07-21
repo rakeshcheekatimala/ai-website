@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -24,22 +25,26 @@ export default function Header() {
           <span className="text-xl font-bold tracking-tight text-ink">Rakesh</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-2 rounded-full border border-line/80 bg-paper/70 p-1 text-sm font-semibold shadow-card backdrop-blur md:flex">
-         
-          <Link href="/work" className="rounded-full px-4 py-2 text-muted transition hover:bg-accent-soft hover:text-accent-dim" onClick={handleNavClick}>
-            Work
-          </Link>
-          <Link href="/projects" className="rounded-full px-4 py-2 text-muted transition hover:bg-accent-soft hover:text-accent-dim" onClick={handleNavClick}>
-            Case Studies
-          </Link>
-          <Link href="/about" className="rounded-full px-4 py-2 text-muted transition hover:bg-accent-soft hover:text-accent-dim" onClick={handleNavClick}>
-            About
-          </Link>
-        </nav>
+        <div className="hidden items-center gap-3 md:flex">
+          {/* Desktop Navigation */}
+          <nav className="flex items-center gap-2 rounded-full border border-line/80 bg-paper/70 p-1 text-sm font-semibold shadow-card backdrop-blur">
+           
+            <Link href="/work" className="rounded-full px-4 py-2 text-muted transition hover:bg-accent-soft hover:text-accent-dim" onClick={handleNavClick}>
+              Work
+            </Link>
+            <Link href="/projects" className="rounded-full px-4 py-2 text-muted transition hover:bg-accent-soft hover:text-accent-dim" onClick={handleNavClick}>
+              Case Studies
+            </Link>
+            <Link href="/about" className="rounded-full px-4 py-2 text-muted transition hover:bg-accent-soft hover:text-accent-dim" onClick={handleNavClick}>
+              About
+            </Link>
+          </nav>
+          <ThemeToggle />
+        </div>
 
         {/* Mobile Menu Button */}
         <div className="flex md:hidden gap-3 items-center">
+          <ThemeToggle />
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="rounded-lg border border-line bg-paper p-2 text-muted shadow-card transition hover:border-accent/40 hover:text-accent"
