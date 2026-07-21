@@ -2,9 +2,9 @@ import { experiences } from '../experiences'
 
 export default function ExperienceTimeline() {
   return (
-    <section className="py-16 md:py-24">
-      <div className="mb-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-ink mb-4">
+    <section className="py-10 md:py-16">
+      <div className="mb-12 max-w-4xl">
+        <h2 className="mb-4 text-5xl font-bold leading-none tracking-tight text-ink md:text-7xl">
           Work &amp; Experience
         </h2>
         <p className="text-lg md:text-xl text-muted max-w-2xl">
@@ -12,12 +12,19 @@ export default function ExperienceTimeline() {
         </p>
       </div>
 
-      <ol className="relative border-l border-line space-y-12 pl-6 md:pl-8">
+      <ol className="relative space-y-8">
         {experiences.map((exp, index) => (
-          <li key={`${exp.company}-${exp.role}-${index}`} className="ml-2 md:ml-4">
-            <div className="absolute -left-[9px] md:-left-[11px] mt-1.5 h-4 w-4 md:h-5 md:w-5 rounded-full border-2 border-accent bg-wash" />
-
-            <div className="rounded-lg border border-line bg-paper p-6 shadow-card transition-all duration-300 hover:border-accent/30 hover:shadow-card-hover md:p-8">
+          <li key={`${exp.company}-${exp.role}-${index}`}>
+            <div className="group grid gap-4 rounded-lg border border-line bg-paper p-6 shadow-card transition hover:-translate-y-1 hover:border-accent/40 hover:shadow-card-hover md:grid-cols-[0.22fr_1fr] md:p-8">
+              <div className="flex items-center gap-3 md:block">
+                <span className="grid h-11 w-11 place-items-center rounded-lg border border-line bg-wash text-sm font-bold text-accent transition group-hover:border-accent/40 group-hover:bg-accent-soft">
+                  {index + 1}
+                </span>
+                <p className="mt-0 text-sm font-medium text-subtle md:mt-4">
+                  {exp.start} - {exp.end}
+                </p>
+              </div>
+              <div>
               <header className="mb-4 flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
                 <div>
                   <h3 className="text-2xl font-semibold text-ink">
@@ -30,9 +37,6 @@ export default function ExperienceTimeline() {
                     ) : null}
                   </p>
                 </div>
-                <p className="text-sm md:text-base font-medium text-subtle whitespace-nowrap">
-                  {exp.start} - {exp.end}
-                </p>
               </header>
 
               <p className="text-muted text-base md:text-lg leading-relaxed mb-4">
@@ -59,6 +63,7 @@ export default function ExperienceTimeline() {
                   ))}
                 </div>
               )}
+              </div>
             </div>
           </li>
         ))}

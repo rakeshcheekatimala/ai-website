@@ -7,16 +7,16 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   const hasActions = project.url || project.repoUrl
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-20">
-      <Link href="/projects" className="text-accent hover:text-accent-dim mb-8 inline-block font-semibold">
+    <div className="mx-auto max-w-6xl px-6 py-20">
+      <Link href="/projects" className="mb-8 inline-block font-semibold text-accent hover:text-accent-dim">
         Back to Case Studies
       </Link>
       
-      <header className="mb-12">
+      <header className="mb-12 rounded-lg border border-line bg-paper p-8 shadow-card md:p-10">
         <p className="text-sm font-semibold uppercase text-accent mb-4">
           Case Study
         </p>
-        <h1 className="text-5xl md:text-6xl font-bold text-ink mb-6">
+        <h1 className="mb-6 text-5xl font-bold leading-none tracking-tight text-ink md:text-7xl">
           {project.title}
         </h1>
         {project.outcome ? (
@@ -24,37 +24,36 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             {project.outcome}
           </p>
         ) : null}
-        <div className="mt-10 h-px bg-line"></div>
       </header>
       
-      <div className="grid gap-8 md:grid-cols-[1.6fr_1fr]">
+      <div className="grid gap-8 lg:grid-cols-[1.6fr_0.9fr]">
         <div className="space-y-10 text-lg text-muted leading-relaxed">
-          <section>
+          <section className="rounded-lg border border-line bg-paper p-7 shadow-card">
             <h2 className="text-2xl font-bold text-ink mb-3">Problem</h2>
             <p>{project.problem ?? project.summary}</p>
             {project.context ? <p className="mt-4">{project.context}</p> : null}
           </section>
 
           {project.constraints ? (
-            <section>
+            <section className="rounded-lg border border-line bg-paper p-7 shadow-card">
               <h2 className="text-2xl font-bold text-ink mb-3">Constraints</h2>
               <p>{project.constraints}</p>
             </section>
           ) : null}
 
           {project.roleDetails || project.role ? (
-            <section>
+            <section className="rounded-lg border border-line bg-paper p-7 shadow-card">
               <h2 className="text-2xl font-bold text-ink mb-3">My Role</h2>
               <p>{project.roleDetails ?? project.role}</p>
             </section>
           ) : null}
 
           {project.approach?.length || project.highlights?.length ? (
-            <section>
+            <section className="rounded-lg border border-line bg-paper p-7 shadow-card">
               <h2 className="text-2xl font-bold text-ink mb-3">Decisions</h2>
               <ul className="space-y-3 text-muted">
                 {(project.approach ?? project.highlights ?? []).map((item) => (
-                  <li key={item} className="flex gap-3">
+                  <li key={item} className="flex gap-3 rounded-lg border border-line/70 bg-wash/70 p-4">
                     <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-accent" />
                     <span>{item}</span>
                   </li>
@@ -64,20 +63,20 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           ) : null}
 
           {project.impact ? (
-            <section>
+            <section className="rounded-lg border border-line bg-paper p-7 shadow-card">
               <h2 className="text-2xl font-bold text-ink mb-3">Impact</h2>
               <p>{project.impact}</p>
             </section>
           ) : null}
         </div>
 
-        <aside className="space-y-6">
+        <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
           {project.metrics?.length ? (
-            <section className="rounded-lg border border-line bg-paper p-6 shadow-card">
-              <h2 className="text-xl font-bold text-ink mb-4">Evidence</h2>
+            <section className="rounded-lg border border-line bg-ink p-6 text-white shadow-card">
+              <h2 className="text-xl font-bold text-white mb-4">Evidence</h2>
               <ul className="space-y-4">
                 {project.metrics.map((metric) => (
-                  <li key={metric} className="text-muted">{metric}</li>
+                  <li key={metric} className="rounded-lg border border-white/10 bg-white/5 p-3 text-line">{metric}</li>
                 ))}
               </ul>
             </section>
@@ -101,12 +100,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       {hasActions ? (
         <div className="mt-12 pt-8 border-t border-line flex flex-col sm:flex-row gap-4">
           {project.url ? (
-            <Link href={project.url} className="rounded-lg bg-accent px-6 py-3 text-center font-semibold text-white transition hover:bg-accent-dim">
+            <Link href={project.url} className="rounded-lg bg-accent px-6 py-3 text-center font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent-dim hover:shadow-glow-sm">
               View Project
             </Link>
           ) : null}
           {project.repoUrl ? (
-            <Link href={project.repoUrl} className="rounded-lg border border-line bg-white px-6 py-3 text-center font-semibold text-ink transition hover:border-accent/40 hover:text-accent">
+            <Link href={project.repoUrl} className="rounded-lg border border-line bg-white px-6 py-3 text-center font-semibold text-ink transition hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent">
               GitHub
             </Link>
           ) : null}

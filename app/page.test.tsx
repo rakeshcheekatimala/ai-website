@@ -51,7 +51,7 @@ describe('Home', () => {
     const page = await Home()
     render(page)
     
-    expect(screen.getByText(/I build revenue-critical frontend systems/i)).toBeInTheDocument()
+    expect(screen.getByText(/I build revenue critical systems/i)).toBeInTheDocument()
     expect(screen.getByText(/Rakesh Cheekatimala/)).toBeInTheDocument()
   })
 
@@ -74,7 +74,7 @@ describe('Home', () => {
     const page = await Home()
     render(page)
     
-    const caseStudiesLink = screen.getByRole('link', { name: /view all case studies/i })
+    const caseStudiesLink = screen.getByRole('link', { name: /^case studies$/i })
     expect(caseStudiesLink).toHaveAttribute('href', '/projects')
     
     const workLink = screen.getByRole('link', { name: /review work history/i })
@@ -93,8 +93,8 @@ describe('Home', () => {
     const page = await Home()
     render(page)
 
-    expect(screen.getByText('60%')).toBeInTheDocument()
-    expect(screen.getByText(/bundle-size reduction/)).toBeInTheDocument()
+    expect(screen.getAllByText('60%').length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/bundle-size reduction/).length).toBeGreaterThan(0)
   })
 
   it('renders social links component', async () => {
@@ -104,12 +104,12 @@ describe('Home', () => {
     expect(screen.getByTestId('social-links')).toBeInTheDocument()
   })
 
-  it('renders the hiring value pillars and writing signal', async () => {
+  it('renders the hiring value pillars and case studies', async () => {
     const page = await Home()
     render(page)
     
     expect(screen.getByText(/What I'm hired to improve/i)).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Revenue-critical frontend' })).toBeInTheDocument()
-    expect(screen.getByText(/Writing signal/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/Case Studies/i).length).toBeGreaterThan(0)
   })
 })

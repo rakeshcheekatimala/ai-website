@@ -187,24 +187,24 @@ export default function LocationBanner() {
 
   if (loading) {
     return (
-      <div className="my-8 h-80 animate-pulse overflow-hidden rounded-lg border border-line bg-white" />
+      <div className="my-8 h-80 animate-pulse overflow-hidden rounded-lg border border-line bg-paper shadow-card" />
     )
   }
 
   if (!location) return null
 
   return (
-    <div className="my-8 overflow-hidden rounded-lg border border-line bg-white shadow-card">
+    <div className="my-8 overflow-hidden rounded-lg border border-line bg-paper shadow-card">
       {MAPBOX_TOKEN ? (
         <div ref={mapContainer} className="w-full h-80" />
       ) : (
-        <div className="w-full h-80 bg-wash flex items-center justify-center">
+        <div className="surface-grid flex h-80 w-full items-center justify-center">
           <p className="text-muted text-sm">Map unavailable - add NEXT_PUBLIC_MAPBOX_TOKEN to .env</p>
         </div>
       )}
 
       {/* Text section */}
-      <div className="px-8 py-7 text-center border-t border-line bg-white">
+      <div className="border-t border-line bg-paper px-8 py-7 text-center">
         <p className="text-graphite text-lg leading-relaxed">
           I&apos;m from{' '}
           <span className="text-ink font-semibold">Singapore</span>, roughly{' '}
